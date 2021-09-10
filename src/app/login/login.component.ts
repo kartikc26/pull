@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('isUserLoggedIn','true');
           console.log(localStorage.getItem('isUserLoggedIn'));
           this.activeModal.close();
-          window.location.reload()
+          // window.location.reload()
         }else{
           console.log('invalid pwd')
         }
