@@ -1,0 +1,277 @@
+.default_check_out{
+  margin-top: 98px;
+  .return{
+    position: relative;
+    padding-left: 65px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    background: #f6f6f6;
+    .return_customer{
+      font: 400 14px "Droid Serif";
+      color: $link-hover-color;
+    }
+    a{
+      color: #333333;
+      font: 400 14px "Droid Serif";
+      text-decoration: none;
+      &:hover{
+        color: #cccccc;
+      }
+    }
+    &:before{
+      content: "\76";
+      font-family: "ElegantIcons";
+      position: absolute;
+      left: 30px;
+      color: $link-hover-color;
+    }
+  }
+  .billing-fields{
+    h2{
+      font: 700 20px "Montserrat";
+      color: #333333;
+      text-transform: uppercase;
+      margin-top: 55px;
+      margin-bottom: 16px;
+    }
+  }
+}
+.input-field{
+  width: 100%;
+  label{
+    width: 100%;
+    font: 400 15px "Droid Serif";
+    color: $link-hover-color;
+    padding-bottom: 16px;
+    padding-top: 18px;
+    .start_checkout{
+      color: #ff3333;
+    }
+  }
+  textarea{
+    width: 100%;
+    border: 1px solid #cccccc;
+    padding-left: 15px;
+    font: 400 15px "Droid Serif";
+    color: #333333;
+    padding-top: 10px;
+  }
+  .selectbox{
+    select{
+      width: 100%;
+      height: 50px;
+      border: 1px solid #cccccc;
+      padding-left: 24px;
+      font: 400 15px "Droid Serif";
+      color: #333333;
+    }
+  }
+  input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #cccccc;
+    padding-left: 24px;
+    font: 400 15px "Droid Serif";
+    color: #333333;
+  }
+}
+.checkbox_acount{
+  margin-top: 40px;
+  margin-bottom: 22px;
+  input{
+    margin-left: 0px;
+    display: none;
+    &:checked+label{
+      &:after{
+        content: "\4e";
+        display: inline-block;
+        font: normal normal normal 14px/1 ElegantIcons;
+        font-size: 20px;
+        color: #212121;
+        position: absolute;
+        top: -3px;
+        left: 0px;
+      }
+    }
+  }
+  label{
+    position: relative;
+    font: 400 15px "Droid Serif";
+    color: #333333;
+    padding-left: 30px;
+    &:before{
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #B5B5B5;
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 45%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}
+.check_out_right{
+  margin-top: 98px;
+}
+.ship_diferent{
+  display: none;
+  margin-bottom: 170px;
+}
+.your_order{
+  padding: 30px 35px 40px 35px;
+  background: #f2f2f2;
+  margin-top: 35px;
+  .input-field{
+    label{
+      padding-bottom: 12px;
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 28px;
+      span{
+        text-transform: uppercase;
+        font: 700 15px "Montserrat";
+        color: $link-hover-color;
+      }
+    }
+    .totals{
+      float: right;
+      padding-right: 22px;
+    }
+  }
+  .product_buy{
+    font: 400 15px "Droid Serif";
+    color: $gray-base;
+    p{
+      margin-bottom: 35px;
+      a{
+        text-decoration: none;
+        span{
+          font: 400 15px "Droid Serif";
+          color: $gray-base;
+        }
+        &:hover{
+          span{
+            color: $link-hover-color;
+          }
+        }
+      }
+      .price_navy{
+        float: right;
+        padding-right: 22px;
+      }
+      &.cart_subtotal{
+        padding-bottom: 35px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #cccccc;
+        .navy{
+          font: 700 15px "Montserrat";
+        }
+      }
+    }
+  }
+  .input-field{
+    label{
+      &.title_order_totals{
+        padding-bottom: 35px;
+        .order_total{
+          font: 400 15px "Montserrat";
+          text-transform: capitalize;
+          color: $gray-base;
+        }
+      }
+    }
+
+    .price_order_total{
+      font: 700 20px "Montserrat";
+      color: $gray-base;
+      float: right;
+      padding-right: 22px;
+    }
+  }
+}
+.payment_methods{
+  ul{
+    list-style: none;
+    li{
+      .checkbox{
+        margin-bottom: 25px;
+        input{
+          display: none;
+          &:checked+label{
+            &:after{
+              content: "";
+              display: block;
+              border-radius: 50%;
+              border: 2px solid $gray-base;
+              content: "";
+              position: absolute;
+              background: $gray-base;
+              -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              transform: translateY(-50%);
+              width: 8px;
+              height: 8px;
+              top: 9px;
+              left: 5px;
+            }
+          }
+        }
+        label{
+          padding-left: 30px;
+          position: relative;
+          font: 400 15px "Droid Serif";
+          color: $gray-base;
+          text-transform: uppercase;
+          &:before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid $gray-base;
+            position: absolute;
+            left: 1px;
+            top: 45%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+          }
+        }
+      }
+      .payment-box{
+        p{
+          padding-left: 30px;
+          padding-right: 30px;
+          font: 400 13px/23px "Droid Serif";
+          color: #666666;
+          padding-bottom: 35px;
+        }
+      }
+    }
+  }
+}
+.place_order{
+  width: 100%;
+  text-align: center;
+  background: $gray-base;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  margin-top: 18px;
+  margin-bottom: 60px;
+  a{
+    text-decoration: none;
+    font: 700 18px "Montserrat";
+    color: $link-color;
+    text-transform: uppercase;
+  }
+  &:hover{
+    background: $link-hover-color;
+  }
+}

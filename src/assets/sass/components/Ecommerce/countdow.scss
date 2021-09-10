@@ -1,0 +1,26 @@
+//Js : engo-plugin.js
+.counter{
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  .expires{
+    float: left;
+    font: 400 16px "Montserrat";
+    color: $link-hover-color;
+    padding-right: 12px;
+  }
+  .countdown-times{
+    float: left;
+    div{
+      display: inline-block;
+      font: 400 16px "Montserrat";
+      color: $link-hover-color;
+      .colon{
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}

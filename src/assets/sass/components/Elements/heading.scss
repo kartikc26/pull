@@ -1,0 +1,289 @@
+.heading {
+	  z-index: 1;
+	  position: relative;
+	  text-align: center;
+	  h1,h2,h3,h4,h5,h6 {		    
+		    text-transform: uppercase;
+		    margin-top:0;
+	  }
+	  .fa{
+	  	 margin-bottom: 26px; 
+	  }
+	  .subheading{
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: $gray-lighter;
+			margin-bottom: 0;
+	  }
+	  p,small {    
+	  	margin-bottom: 15px;
+	  	display: inline-block;
+	  }
+	  &.heading-light {
+  		color: #eee;
+	    h1,h2,h3,h4,h5,h6 {    	
+	      	color: #fff;
+	    }
+	    p,small {
+	     	color: #eee;
+	    }
+	  }
+		&.heading-v1 {
+		    position: relative;
+		    padding-bottom: 35px;
+		    &:before, &:after {
+			    @include rtl-left (50%);
+			    @include size(80px, 5px);
+			    content: "";
+			    bottom: 30px;
+			    position: absolute;
+		    }
+		    &:before {
+			    @include rtl-margin-left (-80px);
+			    background: $engo-heading-color;
+		    }
+		    &:after {
+		      	background: #444;
+		    }
+		    &.heading-light:after {
+		      background: #fff;
+		    }
+		}
+		&.heading-v2 {  	
+			padding-bottom: 35px;
+			&:after {
+			    @include rtl-left (50%);
+			    @include size(200px, 1px);
+			    z-index: 1;
+			    content: " ";
+			    bottom: 30px;
+			    background: $engo-heading-color;
+			    text-align: center;
+			    position: absolute;
+			    @include rtl-margin-left( -100px);
+			}
+			&:before {
+				@include rtl-left (50%);
+				@include size(12px, 12px);
+				@include rtl-margin-left (-6px);
+				@include rotate(45deg);
+				z-index: 2;
+				content: " ";
+				bottom: 25px;
+				text-align: center;
+				position: absolute;
+				background: #fff;
+				border: 1px solid $engo-heading-color;
+			}
+			&.heading-light {
+				&:after {
+				    background: #fff;
+				}
+				&:before {
+					background: $engo-heading-color;;
+					border: 1px solid #fff;
+				}
+			}
+		}
+	    &.heading-v3 {
+	    	padding-bottom: 35px;
+			&:after {
+				@include rtl-left (50%);
+				@include size(100px,2px);
+				@include rtl-margin-left(-50px);
+				content: " ";
+				bottom: 30px;
+				background: $engo-heading-color;
+				position: absolute;
+			}
+			span{
+				display: block;
+				margin-bottom: 20px;
+			}
+			&.heading-light {
+				&:after {
+					background: $engo-heading-color;
+				}
+			}
+	    }
+	    
+	    &.heading-v4 {
+		    z-index: 1;
+		    text-align: center;
+		    padding-top: 70px ;
+		    position: relative;
+		    &:before {
+				@include rtl-left (50%);
+				z-index: -1;
+				@include size(50px, 50px);
+				content: "";
+				top: 11px;
+				text-align: center;
+				position: absolute;
+				background-color: $engo-heading-color;
+				@include rotate(45deg);
+				@include rtl-margin-left (-25px);
+		    }
+			&:after {
+				@include rtl-left(50%);
+				z-index: -1;
+				@include size(50px, 50px);
+				line-height: 50px;
+				content: "\f109";
+				font-family: FontAwesome;
+				top: 11px;
+				text-align: center;
+				position: absolute;
+				color: #fff;
+				@include rtl-margin-left (-25px);
+				font-size: 20px;
+		    }
+		    &.heading-light {
+				&:before {
+					background: #fff;
+				}
+			}
+	    }
+	    &.heading-v5 {
+	    	padding-bottom: 20px;
+	    	background: url("../images/dotted.png") repeat-x scroll center center ;
+			 h1,h2,h3,h4,h5,h6 {
+				padding: 0 30px;
+				background: #fff;
+				position: relative;
+				display: inline-block;
+			}
+	    }
+		&.heading-v6 {
+			h1,h2,h3,h4,h5,h6  {
+				position: relative;
+				margin-bottom: 35px;
+				&:after {
+					@include rtl-left (50%);
+					@include size(80px, 2px);
+					@include rtl-margin-left (-40px);
+					content: " ";
+					bottom: -18px;
+					background: #444;
+					position: absolute;
+				}
+			}
+			&.heading-light {
+				 h1,h2,h3,h4,h5,h6 {
+				 	&:after {
+						background: #fff;
+					}
+				}
+			}
+		}
+		&.heading-v7 {
+			padding-bottom: 40px;
+			&:before {
+			    border-left: 12px solid transparent;
+			    border-right: 12px solid transparent;
+			    border-top: 18px solid $engo-heading-color;
+			    bottom: 20px;
+			    content: "";
+			    @include size(18px, 14px);
+			    @include rtl-left (50%);
+			    @include rtl-margin-left (-18px);
+			    position: absolute;
+			}
+			&:after {
+			    border-left: 8px solid transparent;
+			    border-right: 8px solid transparent;
+			    border-top: 12px solid #ffffff;
+			    bottom: 24px;
+			    content: "";
+			    left: 50%;
+			    @include rtl-margin-left (-14px);
+			    position: absolute;
+			    @include size ( 10px, 8px);
+			}
+			&.heading-light {
+				&:before {
+					border-top: 18px solid #fff;
+				}
+				&:after {
+					border-top: 12px solid $engo-heading-color;
+				}
+			}
+		}
+
+		&.heading-v8 {
+			h1,h2,h3,h4,h5,h6 {
+				position: relative;
+				padding: 20px 0 25px;
+				&:before, &:after{					
+				    content: ".";
+				    font-size: 22px;
+				     @include rtl-left (50%);
+				    position: absolute;
+				    color: #c1c1c1;
+	    			text-shadow: 10px 0 #ddd, -10px 0 #ddd;
+				}
+				&:before {				    
+				    top: -15px;
+				}
+				&:after {
+				    bottom: 0;
+				}
+			}
+		}
+		&.heading-v9 {
+			@include rtl-text-align-left();
+			h1,h2,h3,h4,h5,h6  {
+				position: relative;
+				margin-bottom: 30px;
+				&:after {
+					@include rtl-left (0);
+					@include size(30px, 2px);
+					content: " ";
+					bottom: -15px;
+					right: inherit;
+					background-color: $engo-heading-color;
+					position: absolute;
+				}
+			}
+			&.heading-light {
+				h1,h2,h3,h4,h5,h6  {
+					&:after {
+						background-color: #fff;
+					}
+				}
+			}			
+		}
+
+
+		&.heading-v10 {
+	    	padding-bottom: 35px;
+	    	h2{
+	    		font-size: 45px;
+	    	}
+			&:after {
+				@include rtl-left (50%);
+				@include size(100px,2px);
+				@include rtl-margin-left(-50px);
+				content: " ";
+				bottom: 30px;
+				background: $engo-heading-color;
+				position: absolute;
+			}
+			&.heading-light {
+				&:after {
+					background: $engo-heading-color;
+				}
+			}
+	    }
+
+	    &.heading-v11{
+	    	@extend .heading-v10;
+	    	h2{
+	    		font-size: $font-size-h2;
+	    	}
+	    }
+
+}
+

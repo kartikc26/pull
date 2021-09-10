@@ -1,0 +1,2079 @@
+//http://test.lunartheme.com/jakiro-demo/
+/** 6.6.0 Home default **/
+a{
+    &:hover,&:focus{
+        outline: none;
+    }
+}
+.container-full{
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+.vc-row{
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+body{
+  letter-spacing: 0.25px;
+}
+.font_aws{
+  &.fa{
+    font-family: "FontAwesome";
+    &:before{
+      font-family: "FontAwesome";
+    }
+  }
+}
+@media only screen and (max-width: 479px){
+  .col-mb-12 {
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media only screen and (min-width: 1820px){
+  .col-fs-2 {
+    width: 16.66666667%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include transition(all 0.5s ease 0s);
+  }
+}
+
+/** 6.6.1 Home page 1 **/
+.fancybox-wrap{
+  top: 60px;
+}
+.bg-opacity{
+  position: relative;
+  &:before{
+    background: #4c5762 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 120;
+  }
+}
+.main_content{
+    z-index: 1;
+    .banner{
+        width: 100%;
+        .wrap_banner{
+            padding-top: 270px;
+        }
+        h4{
+            margin-top: 0px;
+            color: $link-color;
+            text-transform: uppercase;
+            font: 400 18px "Montserrat";
+            margin-bottom: 18px;
+        }
+        h2{
+            color: $link-color;
+            text-transform: uppercase;
+            font: 700 60px/58px "Montserrat";
+            margin-bottom: 112px;
+        }
+        .shop_now{
+            border: 1px solid $link-color;
+            padding: 22px 50px 22px 50px;
+            text-decoration: none;
+            span{
+                font: 400 14px "Montserrat";
+                text-transform: uppercase;
+                color: $link-color;
+            }
+            &:hover, &:active{
+                background: $link-color;
+                span{
+                    color: $gray-base;
+                }
+            }
+        }
+    }
+}
+.animated{
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.vc-row{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.video_v1{
+  position: relative;
+  .play_video{
+    border: 2px solid $link-color;
+    border-radius: 100%;
+    color: $link-color;
+    font-size: 2.76923em;
+    height: 100px;
+    line-height: 96px;
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    &:hover{
+      cursor: pointer;
+      animation: 2s ease 0s normal none infinite running mymove;
+      font-size: 3em;
+    }
+  }
+}
+.embed-wrap{
+  margin: 50px auto;
+  left:0;
+  right: 0;
+  max-width: 800px;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+.wrapp_video{
+  height: 100%;
+  left: 0;
+  outline: medium none;
+  position: fixed;
+  top: 0;
+  width: 60%;
+  z-index: 1043;
+  text-align: center;
+  .mfp-container{
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    padding: 0 8px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    .mfp-content{
+      width: 100%;
+      transform-origin: center top 0;
+      @include transition(all 0.5s ease 0s);
+      margin-top: 100px;
+    }
+  }
+}
+.banner_v1{
+  &:hover{
+    cursor: pointer;
+    .animate1{
+      animation-name:lightSpeedIn;
+    }
+  }
+}
+.vc-row{
+  .wpb_column{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.vc_column-inner{
+  padding-left: 182px;
+  padding-top: 202px;
+  .tittle{
+    font: 700 36px/36px "Montserrat";
+    text-transform: uppercase;
+    color: $gray-base;
+    padding-bottom: 35px;
+    background: url("../images/video/line_tittle.png") no-repeat scroll 0 100%;
+  }
+  .caption_inner{
+    font: 400 14px/25px "Droid Serif";
+    color: #666666;
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+  a{
+    &.view_collection{
+      font: 700 14px "Montserrat";
+      color: $gray-base;
+      text-decoration: none;
+      position: relative;
+      &:after{
+        content: "\24";
+        font-family: "ElegantIcons";
+        width: 0px;
+        position: absolute;
+        font-size: 18px;
+        right: -15px;
+        @include transition(all 0.5s ease 0s);
+        opacity: 1;
+      }
+      &:hover{
+        color: $link-hover-color;
+        &:after{
+          width: 30px;
+          right: -200px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+.vc-row{
+  .view_more{
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 103px;
+    .view_more_pro{
+      color: $gray-base;
+      font: 700 14px "Montserrat";
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      &:before{
+        content: "\24";
+        font-family: "ElegantIcons";
+        font-size: 18px;
+        opacity: 1;
+        position: absolute;
+        right: -15px;
+        @include transition(all 0.5s ease 0s);
+        width: 0;
+      }
+      &:hover{
+        color: $link-hover-color;
+        &:before{
+          opacity: 0;
+          width: 30px;
+          right: -200px;
+        }
+      }
+    }
+  }
+}
+.men_hot_trending{
+  position: relative;
+  overflow: hidden;
+  img{
+    position: relative;
+    @include transition(all 1s ease 0s);
+  }
+  .caption{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:350px;
+    .men_clothing{
+      text-transform: uppercase;
+      color: $link-color;
+      font: 400 18px "Montserrat";
+    }
+    .tittle{
+      font: 700 36px/35px "Montserrat";
+      color: $link-color;
+      text-transform: uppercase;
+      margin-top: 0px;
+      margin-bottom: 58px;
+    }
+    .shop_now{
+      text-decoration: none;
+      a{
+        text-transform: uppercase;
+        font: 400 14px "Montserrat";
+        color: $link-color;
+        text-decoration: none;
+        padding: 22px 50px 22px 50px;
+        border: 1px solid $link-color;
+        &:hover{
+          color: $gray-base;
+          background: $link-color;
+        }
+      }
+    }
+  }
+  &:hover{
+    img{
+      transform: scale(1.05,1.05);
+      -webkit-transform: scale(1.05,1.05);
+      -moz-transform: scale(1.05,1.05);
+      -o-transform: scale(1.05,1.05);
+      -ms-transform: scale(1.05,1.05);
+    }
+  }
+}
+.hot_deals{
+  position: relative;
+  overflow: hidden;
+  img{
+    position: relative;
+    @include transition(all 1s ease 0s);
+  }
+  .caption{
+    position: absolute;
+    top:210px;
+    width: 100%;
+    text-align: center;
+    h4{
+      font: 400 18px "Montserrat";
+      color: $link-color;
+      text-transform: uppercase;
+      padding-top: 58px;
+    }
+    h2{
+      font: 700 36px/35px "Montserrat";
+      color: $link-color;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+    .view_all{
+      margin-top: 66px;
+      a{
+        text-transform: uppercase;
+        font: 400 14px "Montserrat";
+        color: #ffffff;
+        text-decoration: none;
+        padding: 22px 50px 22px 50px;
+        border: 1px solid #ffffff;
+        &:hover{
+          background: $link-color;
+          color: $gray-base;
+        }
+      }
+    }
+  }
+  &:hover{
+    .img-hot-deals{
+      transform: scale(1.03,1.03);
+      -webkit-transform: scale(1.03,1.03);
+      -moz-transform: scale(1.03,1.03);
+      -o-transform: scale(1.03,1.03);
+      -ms-transform: scale(1.03,1.03);
+    }
+  }
+}
+/****************** Responsive homepage 1 ****************/
+@media only screen and (min-width: 1900px) {
+  .col-lag-8{
+    width: 1245px;
+  }
+  .col-lag-4{
+    width: 675px;
+  }
+}
+@media only screen and (min-width: 1020px) and  (max-width: 1600px){
+  .vc_column-inner{
+    padding-top: 80px;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .products{
+    .distance_v1{
+      padding-top: 80px;
+      padding-right: 60px;
+      padding-left: 60px;
+    }
+  }
+  .men_hot_trending{
+    background: url("../images/banner/men_hot_trending.jpg");
+    background-position: center center;
+    height: 780px;
+    .caption{
+      top: 270px;
+    }
+    img{
+      display: none;
+    }
+  }
+  .hot_deals{
+    background: url("../images/banner/img_hot_deals.jpg");
+    height: 950px;
+    .img-hot-deals{
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .vc_column-inner{
+    padding-top: 20px;
+    .tittle{
+      font-size: 26px;
+    }
+    .caption_inner{
+      padding-top: 18px;
+      padding-bottom: 5px;
+    }
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 800px) {
+  .video_v1{
+    padding-left: 45px;
+    padding-top: 20px;
+  }
+  .vc_column-inner{
+    padding-left: 30px;
+    padding-top: 0px;
+    .tittle{
+      font: 700 22px/26px "Montserrat";
+      padding-bottom: 20px;
+    }
+    .caption_inner{
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .wrapper{
+    overflow: hidden;
+  }
+  .products{
+    .distance_v1{
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-top: 80px;
+      .product_owl{
+        .owl-dots{
+          display: none;
+        }
+      }
+      .product2_owl{
+        .owl-dots{
+          display: none;
+        }
+      }
+    }
+    .distance{
+      .product_wrap{
+        .product{
+          .action{
+            .quickview{
+              transform: translate(0px, 0px);
+              -ms-transform: translate(0px, 0px);
+              -moz-transform: translate(0px, 0px);
+              -webkit-transform: translate(0px, 0px);
+            }
+            .wishlist{
+              transform: translate(0px, 0px);
+              -ms-transform: translate(0px, 0px);
+              -moz-transform: translate(0px, 0px);
+              -webkit-transform: translate(0px, 0px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .vc-row{
+    .view_more{
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+  }
+  .men_hot_trending{
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+    }
+  }
+  .hot_deals{
+    margin-left: 45px;
+    margin-right: 45px;
+    .caption{
+      top: 50px;
+      .img_content{
+        height: 150px;
+      }
+      h2{
+        font-size: 28px;
+      }
+    }
+  }
+  .pro_inner{
+    padding-right: 0px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .video_v1{
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-top: 15px;
+  }
+  .vc_column-inner{
+    padding-left: 60px;
+    padding-top: 60px;
+    .caption_inner{
+      padding-bottom: 45px;
+    }
+  }
+}
+@media only screen and (max-width: 500px){
+  .video_v1{
+    margin-left: 30px;
+    margin-right: 30px;
+    .play_video{
+      height: 60px;
+      width: 60px;
+      font-size: 1.5em;
+      line-height: 55px;
+      &:hover{
+        font-size: 1.8em;
+      }
+    }
+  }
+  .vc_column-inner {
+    padding-left: 30px;
+    padding-top: 20px;
+    .tittle{
+      font: 700 26px/28px "Montserrat";
+      padding-bottom: 25px;
+    }
+    .caption_inner{
+      padding-top: 30px;
+      padding-bottom: 15px;
+    }
+  }
+  .products{
+    .distance_v1{
+      padding-top: 60px;
+    }
+  }
+  .men_hot_trending{
+    margin-right: 30px;
+    margin-left: 30px;
+    .caption{
+      top: 100px;
+      .men_clothing{
+        font-size: 16px;
+      }
+      .tittle{
+        font: 700 26px/35px "Montserrat";
+      }
+    }
+  }
+  .hot_deals{
+    margin-left: 30px;
+    margin-right: 30px;
+    .caption{
+      top: 20px;
+      .img_content{
+        height: 60px;
+      }
+      h4{
+        font-size: 11px;
+        padding-top: 0px;
+      }
+      h2{
+        font: 700 12px/15px "Montserrat";
+        margin-bottom: 10px;
+      }
+      .view_all{
+        margin-top: 40px;
+        a{
+          padding: 15px 50px 15px 50px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 321px) {
+  .vc_column-inner{
+    .tittle{
+      font: 700 22px/28px "Montserrat";
+    }
+    .caption_inner{
+      padding-bottom: 15px;
+      padding-top: 15px;
+      font: 400 11px/22px "Montserrat";
+    }
+  }
+  .men_hot_trending{
+    .caption{
+      top: 120px;
+      .men_clothing{
+        font-size: 12px;
+      }
+      .tittle{
+        font: 700 22px/30px "Montserrat";
+      }
+      .shop_now{
+        a{
+          padding: 12px 35px;
+        }
+      }
+    }
+  }
+  .hot_deals{
+    .caption{
+      .img_content{
+        height: 50px;
+      }
+      h4{
+        font-size: 8px;
+      }
+      h2{
+        font-size: 11px;
+        margin-bottom: 0px;
+      }
+      .view_all{
+        margin-top: 25px;
+        a{
+          padding: 12px 35px;
+        }
+      }
+    }
+  }
+}
+//End responsive homepage v1
+//End page 1
+/** 6.6.1 Home page 2 **/
+.banner_v2{
+  margin-top: 85px;
+  height: auto;
+  img{
+    width: 100%;
+  }
+  .wrap_banner_left{
+    position: relative;
+    overflow: hidden;
+    img{
+      position: relative;
+      @include transition(all 1s ease 0s);
+      backface-visibility: hidden;
+      -ms-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    .banner_left{
+      &:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        visibility: hidden;
+        background: rgba(0,0,0,0.2);
+        @include transition(all 0.3s ease 0s);
+      }
+    }
+    .caption_banner_left{
+      position: absolute;
+      right: 38px;
+      top: 45px;
+      text-align: right;
+      text-transform: uppercase;
+      font: 700 36px "Montserrat";
+    }
+    &:hover{
+      img{
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        -ms-transform: scale3d(1.1, 1.1, 1);
+        -o-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+      }
+      .animate3{
+        animation-name: zoomInLeft;
+      }
+      .banner_left{
+        &:before{
+          opacity: 1;
+          filter: alpha(opacity=100);
+          visibility: visible;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .wrap_banner_right{
+    .banner_top{
+      margin-bottom: 30px;
+      .wrap_banner_top_left{
+        position: relative;
+        overflow: hidden;
+        .banner_top_left{
+          img{
+            position: relative;
+            @include transition(all 1s ease 0s);
+            backface-visibility: hidden;
+            -ms-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+          }
+          .caption_banner_left_left{
+            position: absolute;
+            color: $gray-base;
+            right: 15px;
+            top: 25px;
+            text-transform: uppercase;
+            text-align: right;
+            font: 700 30px "Montserrat";
+          }
+          &:before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            visibility: hidden;
+            background: rgba(0,0,0,0.2);
+            @include transition(all 0.3s ease 0s);
+          }
+        }
+        &:hover{
+          img{
+            -webkit-transform: scale3d(1.1, 1.1, 1);
+            -ms-transform: scale3d(1.1, 1.1, 1);
+            -o-transform: scale3d(1.1, 1.1, 1);
+            transform: scale3d(1.1, 1.1, 1);
+          }
+          .caption_banner_left_left{
+            color: $link-hover-color;
+          }
+          .animate4{
+            animation-name: zoomInUp;
+          }
+          .banner_top_left{
+            &:before{
+              opacity: 1;
+              filter: alpha(opacity=100);
+              visibility: visible;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .banner_bottom{
+      height: 262px;
+      .wrap_banner_bottom{
+        height: 100%;
+        .img_banner_bottom{
+          height: 100%;
+        }
+      }
+    }
+  }
+  .wrap_banner_top_right{
+    position: relative;
+    overflow: hidden;
+    .banner_top_right{
+      img{
+        position: relative;
+        @include transition(all 1s ease 0s);
+        backface-visibility: hidden;
+        -ms-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .caption_banner_left_right{
+        position: absolute;
+        color: $link-color;
+        right: 20px;
+        top: 25px;
+        text-transform: uppercase;
+        text-align: right;
+        font: 700 30px "Montserrat";
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        visibility: hidden;
+        background: rgba(0,0,0,0.2);
+        @include transition(all 0.3s ease 0s);
+      }
+    }
+    &:hover{
+      img{
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        -ms-transform: scale3d(1.1, 1.1, 1);
+        -o-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+      }
+      .caption_banner_left_right{
+        color: $link-hover-color;
+      }
+      .animate5{
+        animation-name: rollIn;
+      }
+      .banner_top_right{
+        &:before{
+          opacity: 1;
+          filter: alpha(opacity=100);
+          visibility: visible;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .banner_bottom{
+    position: relative;
+    overflow: hidden;
+    .wrap_banner_bottom{
+      img{
+        position: relative;
+        @include transition(all 1s ease 0s);
+        backface-visibility: hidden;
+        -ms-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .caption_banner_left_right{
+        position: absolute;
+        color: $link-color;
+        left: 32px;
+        top: 32px;
+        text-transform: uppercase;
+        text-align: left;
+        font: 700 30px "Montserrat";
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        visibility: hidden;
+        background: rgba(0,0,0,0.2);
+        @include transition(all 0.3s ease 0s);
+      }
+    }
+    &:hover{
+      img{
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        -ms-transform: scale3d(1.1, 1.1, 1);
+        -o-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+      }
+      .caption_banner_left_right{
+        color: $gray-base;
+      }
+      .animate6{
+        animation-name: rotateInUpRight;
+      }
+      .wrap_banner_bottom{
+        &:before{
+          opacity: 1;
+          filter: alpha(opacity=100);
+          visibility: visible;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.blog{
+  .general{
+    text-align: center;
+    h3{
+      margin-top: 70px;
+      padding-bottom: 25px;
+      position: relative;
+      font: 700 24px "Montserrat";
+      color: $gray-base;
+      letter-spacing: 2px;
+      &:after{
+        content: "";
+        border-bottom: 1px dotted $link-hover-color;
+        position: absolute;
+        width: 100px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        top: 0px;
+      }
+    }
+    p{
+      padding-top: 25px;
+      font: 400 14px "Droid Serif";
+      color: #666666;
+    }
+  }
+}
+.products_most_popupalr{
+  margin-top: 40px;
+  margin-bottom: 72px;
+  .products{
+    .distance_v2{
+      .owl-carousel{
+        position: relative;
+        .owl-nav{
+          .owl-prev{
+            position: absolute;
+            left: -75px;
+            top:32%;
+            bottom: 0;
+            height: 45px;
+            width: 45px;
+            background: #ececec;
+            &:before{
+              content: "\34";
+              font-family: "ElegantIcons";
+              font-size: 25.29px;
+              text-align: center;
+              color:  $link-hover-color;
+              position: absolute;
+              top: 4px;
+              right: 10px;
+            }
+            &:hover{
+              background: $gray-base;
+              &:before{
+                color: $link-color;
+              }
+            }
+          }
+          .owl-next{
+            position: absolute;
+            right: -75px;
+            top:32%;
+            bottom: 0;
+            height: 45px;
+            width: 45px;
+            background: #ececec;
+            &:before{
+              content: "\35";
+              font-family: "ElegantIcons";
+              font-size: 25.29px;
+              text-align: center;
+              color:  $link-hover-color;
+              position: absolute;
+              top: 4px;
+              right: 10px;
+            }
+            &:hover{
+              background: $gray-base;
+              &:before{
+                color: $link-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.testimonials{
+  height: 590px;
+  margin-bottom: 30px;
+  background: url(../images/banner/background_testimonial.jpg);
+  width: 100%;
+  position: relative;
+  .owl-carousel, .owl-carousel .owl-item{
+    position: initial;
+  }
+  .testimonial{
+    .caption{
+      padding-top: 166px;
+      padding-left: 15%;
+      padding-right: 15%;
+      text-align: center;
+      .quotation{
+        color: $gray-base;
+        &:before{
+          content: "\7b";
+          font-family: 'ElegantIcons';
+          speak: none;
+          font-weight: normal;
+          font-variant: normal;
+          font-style: normal;
+          text-transform: none;
+          display: inline-block;
+          font-size: 35px;
+          color: $link-color;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+      .note{
+        color: $link-color;
+        font: 400 18px "Droid Serif";
+        font-style: italic;
+        margin-top: 40px;
+        line-height: 35px;
+      }
+      .logan_cee{
+        color: $link-color;
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding-top: 15px;
+      }
+      .web_designer{
+        color: $link-color;
+        font: 400 14px "Droid Serif";
+        color: #cccccc;
+        margin-top: -2px;
+      }
+    }
+    .owl-dots{
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: 73px;
+      .owl-dot{
+        height: 12px;
+        width: 12px;
+        background: $link-hover-color;
+        float: left;
+        margin: 5px;
+        border-radius: 50%;
+        &.active{
+          background: $link-color;
+        }
+      }
+    }
+  }
+}
+.latest_post{
+  .latest-posts-body{
+    margin-top: 60px;
+    margin-bottom: 175px;
+    .latest-posts-image{
+      overflow: hidden;
+      position: relative;
+      a{
+        &.img_latest_post{
+          overflow: hidden;
+          display: block;
+          position: relative;
+          img{
+            -ms-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            @include transition(all 0.5s ease 0s);
+          }
+          &:after{
+            background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+            bottom: 0;
+            content: "";
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include transition(all 0.3s ease 0s);
+          }
+        }
+      }
+      &:before{
+        position: absolute;
+        content: "\e048";
+        font-size: 70px;
+        font-family: "linea-arrows-10" !important;
+        color: $link-color;
+        width: 100%;
+        top: 50%;
+        text-align: center;
+        z-index: 12;
+        margin-top: -35px;
+        opacity: 0;
+        @include transition(all 0.3s ease 0s);
+      }
+      &:hover{
+        a{
+          img{
+            transform: scale3d(1.05, 1.05, 1);
+          }
+          &:after{
+            opacity: 1;
+          }
+        }
+        &:before{
+          opacity: 1;
+        }
+      }
+    }
+    .latest-posts-meta{
+      h3{
+        margin-top: 30px;
+        a{
+          color: #333333;
+          font: 700 18px "Montserrat";
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+        &:hover{
+          a{
+            color: $link-hover-color;
+          }
+        }
+      }
+      .time{
+        font: 400 12px "Droid Serif";
+        color: $link-hover-color;
+        margin-bottom: 20px;
+        .admin, .type{
+          font-weight: 700;
+          color: #666666;
+        }
+      }
+      .note{
+        font: 400 14px/26px "Droid Serif";
+        color: #666666;
+      }
+      .more{
+        margin-top: 25px;
+        a{
+          text-transform: uppercase;
+          font: 700 14px "Droid Serif";
+          color: #333333;
+          position: relative;
+          text-decoration: none;
+          &:after{
+            content: "\24";
+            position: absolute;
+            font-family: "ElegantIcons";
+            padding-left: 10px;
+            font-size: 17px;
+          }
+        }
+        &:hover{
+          a{
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/****************** Responsive homepage 2 ****************/
+@media only screen and (max-width: 1025px) {
+  .banner_v2 .wrap_banner_right .banner_bottom {
+    height: 212px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner_v2{
+    margin-top: 30px;
+    .wrap_banner_left{
+      margin-bottom: 30px;
+    }
+    .wrap_banner_top_left{
+      margin-bottom: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .testimonials{
+    .testimonial{
+      .caption{
+        padding-top: 105px;
+        .note{
+          font: 400 13px/35px "Droid Serif";
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 380px) {
+  .testimonials .testimonial .caption .note{
+    margin-top: 30px;
+    font: 400 10px/35px "Droid Serif";
+  }
+}
+/****************** End responsive homepage 2***********/
+//End homepage2
+/** 6.6.1 Home page parallax **/
+.banner1{
+  .wrap_banner{
+    .caption{
+      padding-top: 270px;
+      .fashion_lookbook{
+        font: 400 18px "Montserrat";
+        color: $link-color;
+        text-transform: uppercase;
+      }
+      .hipster{
+        font: 700 60px/60px "Montserrat";
+        color: $link-color;
+        text-transform: uppercase;
+        margin-top: 12px;
+        margin-bottom: 90px;
+      }
+      .shop_now{
+        padding-bottom: 15px;
+        a{
+          border: 1px solid #ffffff;
+          font: 400 14px/50px "Montserrat";
+          padding: 22px 48px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+        &:hover{
+          a{
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+.banner2{
+  .wrap_banner{
+    .caption{
+      padding-top: 275px;
+      text-align: right;
+      .amazing{
+        font: 400 18px "Montserrat";
+        color: $gray-base;
+        text-transform: uppercase;
+      }
+      .women_collection{
+        font: 700 60px/60px "Montserrat";
+        color: $gray-base;
+        text-transform: uppercase;
+        margin-top: 12px;
+        margin-bottom: 90px;
+      }
+      .shop_now{
+        padding-bottom: 15px;
+        a{
+          font: 400 14px "Montserrat";
+          color: $link-color;
+          text-transform: uppercase;
+          text-decoration: none;
+          line-height: 50px;
+          padding: 22px 48px 22px 48px;
+          border: 1px solid $gray-base;
+          background: $gray-base;
+          &:hover{
+            color: $gray-base;
+            border: 1px solid $link-color;
+            background: $link-color;
+          }
+        }
+      }
+    }
+  }
+}
+.banner3{
+  .wrap_banner{
+    .caption{
+      text-align: center;
+      display: block;
+      width: 100%;
+      padding-top: 272px;
+      .autumn{
+        color: #ffffff;
+        font: 400 18px "Montserrat";
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      h3{
+        color: #ffffff;
+        font: 700 60px/60px "Montserrat";
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+      .over{
+        font: 400 18px/32px "Droid Serif";
+        color: $link-color;
+        margin-bottom: 75px;
+      }
+      .shop_now{
+        padding-bottom: 15px;
+        a{
+          border: 1px solid $link-color;
+          font: 400 14px/50px "Montserrat";
+          padding: 22px 48px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $link-color;
+        }
+        &:hover{
+          a{
+            background: $link-color;
+            color: $gray-base;
+            border-color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}
+.banner4{
+  .wrap_banner{
+    .caption{
+      display: block;
+      padding-top: 270px;
+      .special_promotion{
+        color: #000000;
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 19px;
+        text-shadow: none;
+        font-family: "Montserrat";
+        text-transform: uppercase;
+      }
+      .sale_up{
+        font: 700 60px/60px "Montserrat";
+        text-transform: uppercase;
+        color: $gray-base;
+        margin-bottom: 95px;
+      }
+      .shop_now{
+        padding-bottom: 15px;
+        a{
+          color: $gray-base;
+          font: 400 14px "Montserrat";
+          text-decoration: none;
+          text-transform: uppercase;
+          border: 1px solid $gray-base;
+          line-height: 50px;
+          padding: 22px 48px;
+        }
+        &:hover{
+          a{
+            color: $link-color;
+            background: $gray-base;
+            border-color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}
+.banner5{
+  .wrap_banner{
+    .caption{
+      padding-top: 285px;
+    }
+  }
+}
+#nav{
+  list-style: none;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  margin-top: -40px;
+  list-style: none;
+  .click{
+    width: 12px;
+    height: 12px;
+    border: 1px solid $link-color;
+    border-radius: 50%;
+    display: block;
+    &:hover, &.active{
+      background: $link-color;
+    }
+    &.active{
+      background: $link-color;
+    }
+  }
+}
+
+#nav li{
+  margin: 0 0 15px 0;
+}
+
+#header, #slide1, #slide2{
+  width: 100%;
+}
+
+#slide1{
+  background:url(../images/slides/img1_v1.jpg) 100% 50% repeat fixed;
+  background-size: auto 100%;
+  color: white;
+  height: 1300px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  .bg{
+    background: #f1f1f1;
+  }
+}
+
+#slide2{
+  background: url(../images/banner/img1_parallax.jpg) 100% 0 repeat fixed;
+  background-size: auto 100%;
+  color: white;
+  height: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+}
+
+#slide3{
+  background: url(../images/banner/img2_parallax.jpg) 100% 0 no-repeat fixed;
+  color: white;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 1300px;
+  padding: 0;
+}
+
+#slide4{
+  background: url(../images/banner/img3_parallax.jpg) 100% 0 repeat fixed;
+  background-size: auto 100%;
+  color: white;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 1300px;
+  padding: 0;
+}
+
+#slide5{
+  background: url(../images/banner/img4_parallax.jpg) 100% 0 repeat fixed;
+  background-size: auto 100%;
+  height: 1300px;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+}
+
+.story{
+  margin: 0 auto;
+  min-width: 1170px;
+  overflow: hidden;
+  width: 1170px;
+}
+
+.story .float-left, .story .float-right{
+  padding: 100px 0 0 0;
+  position: relative;
+  width: 350px;
+}
+/****************** Responsive home parallax ****************/
+@media only screen and (max-width: 1200px) {
+  html{
+    overflow-x: hidden;
+  }
+  .story{
+    width: 100%;
+    min-width: auto;
+  }
+  .banner1 .wrap_banner .caption {
+     padding-left: 50px;
+   }
+  .banner2 .wrap_banner .caption {
+    padding-right: 80px;
+  }
+  .banner4 .wrap_banner .caption {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #nav{
+    display: none;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #slide1, #slide2, #slide3, #slide4, #slide5{
+    height: 600px;
+  }
+  .banner1{
+    .wrap_banner{
+      .caption{
+        padding-top: 50px;
+        .fashion_lookbook {
+          font-size: 15px;
+        }
+        .hipster{
+          font: 700 36px/38px "Montserrat";
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .banner2{
+    .wrap_banner{
+      .caption{
+        padding-top: 50px;
+        .amazing{
+          font-size: 15px;
+        }
+        .women_collection {
+          font: 700 36px/38px "Montserrat";
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .banner3{
+    .wrap_banner{
+      .caption{
+        padding-top: 50px;
+        .autumn{
+          font-size: 15px;
+        }
+        h3{
+          font: 700 36px/38px "Montserrat";
+          margin-bottom: 20px;
+          margin-top: 0px;
+        }
+        .over{
+          font: 400 13px/20px "Droid Serif";
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+  .banner4{
+    .wrap_banner{
+      .caption{
+        padding-top: 50px;
+        .special_promotion{
+          font-size: 15px;
+        }
+        .sale_up{
+          font: 700 36px/38px "Montserrat";
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .banner1 .wrap_banner .caption {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .banner2 .wrap_banner .caption {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .banner4 .wrap_banner .caption {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #slide1, #slide2, #slide3, #slide4, #slide5{
+    height: 800px;
+  }
+  .banner1{
+    .wrap_banner{
+      .caption{
+        padding-top: 150px;
+        .fashion_lookbook {
+          font-size: 13px;
+        }
+        .hipster{
+          font: 700 27px/30px "Montserrat";
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .banner2{
+    .wrap_banner{
+      .caption{
+        padding-top: 150px;
+        .amazing{
+          font-size: 13px;
+        }
+        .women_collection {
+          font: 700 27px/30px "Montserrat";
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .banner3{
+    .wrap_banner{
+      .caption{
+        padding-top: 150px;
+        .autumn{
+          font-size: 15px;
+        }
+        h3{
+          font: 700 27px/30px "Montserrat";
+          margin-bottom: 20px;
+          margin-top: 0px;
+        }
+        .over{
+          font: 400 13px/20px "Droid Serif";
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+  .banner4{
+    .wrap_banner{
+      .caption{
+        padding-top: 150px;
+        .special_promotion{
+          font-size: 15px;
+        }
+        .sale_up{
+          font: 700 27px/30px "Montserrat";
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+/***************** End responsive home parallax**************/
+//End homepage parallax
+/***************** Home simple ****************/
+.wrap_home_simple{
+  border-bottom: 1px solid #d6d6d6;
+}
+.introduce{
+  text-align: center;
+  h4{
+    color: $gray-base;
+    text-transform: uppercase;
+    font: 700 18px "Montserrat";
+    margin-top: 68px;
+    margin-bottom: 26px;
+  }
+  p{
+    font: 400 13px/25px "Droid Serif";
+    color: #666666;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #dfe0e4;
+  }
+}
+.products_home_single{
+  .tab-v8{
+    .header_featured_pr{
+      margin-top: 45px;
+      margin-bottom: 50px;
+    }
+    .nav-tabs{
+      border: none;
+      li{
+        background: none;
+        border: none;
+        a{
+          border: none;
+          font: 700 18px "Montserrat";
+          color: $link-hover-color;
+          padding: 0 30px;
+          position: relative;
+          text-transform: uppercase;
+          &:after{
+            content: "";
+            display: block;
+            border-right: 2px solid $link-hover-color;
+            position: absolute;
+            height: 17px;
+            right:0;
+            bottom: 0;
+          }
+        }
+        &.active{
+          a{
+            color: $gray-base;
+          }
+        }
+        &:last-child{
+          a{
+            &:after{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.favorable{
+  margin-top: 40px;
+  .blog_favoravle{
+    margin-bottom: 85px;
+    .tittle{
+      margin-bottom: 20px;
+      .icon_favorable{
+        font-size: 25px;
+        padding-right: 8px;
+      }
+      .text_tittle{
+        text-transform: uppercase;
+        font: 700 18px "Montserrat";
+      }
+    }
+    .caption{
+      font: 400 13px/24px "Droid Serif";
+      color: $link-hover-color;
+    }
+  }
+}
+/***************** Responsive home simple *******************/
+@media only screen and (min-width: 1100px) {
+  .wrapper_home_no_fix{
+    .home_simple{
+      &.header_fix{
+        position: relative;
+        height: auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .products_home_single .tab-v8 .nav-tabs li {
+    a{
+      padding: 0 20px;
+    }
+    &:first-child{
+      a{
+        padding-left: 0px;
+      }
+    }
+    &:last-child{
+      a{
+        padding-right: 0px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .products_home_single .tab-v8{
+    .header_featured_pr{
+      margin-bottom: 35px;
+      .nav-tabs{
+        li{
+          width: 100%;
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          background: #f1f1f1;
+          margin-bottom: 10px;
+          &.active{
+            background: #e7e7e7;
+          }
+          a{
+            &:after{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//End home simple
+/************* Home boxed *********************/
+.wrap_home_boxed{
+  .container_home_boxed{
+    border-bottom: 1px solid #d6d6d6;
+  }
+}
+/************** Home full width v3 **************/
+.about_jakiro{
+  position: relative;
+  padding-top: 150px;
+}
+.vc_separetor{
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  position: absolute;
+  top: 126px;
+  left: -100px;
+  text-transform: uppercase;
+  font-size: 18px;
+  h4{
+    padding: 0px 0.8em 0px 0px;
+    line-height: 1em;
+    font-size: 100%;
+    word-wrap: break-word;
+    -webkit-box-flex: 0;
+    margin: 0px;
+    flex: 0 1 auto;
+    font: 700 18px "Montserrat";
+  }
+  .vc_sep_holder{
+    height: 1px;
+    position: relative;
+    -webkit-box-flex: 1;
+    min-width: 10%;
+    flex: 1 1 auto;
+    .vc_sep_line{
+      height: 1px;
+      border-top: 1px solid #EBEBEB;
+      display: block;
+      position: absolute;
+      top: 1px;
+      width: 150px;
+      top: -12px;
+      right: -325px;
+    }
+  }
+}
+.vc_figure{
+  .vc_single_image_wrapp{
+    img{
+      -webkit-box-shadow: 5px 0 40px rgba(0,0,0,0.15);
+      box-shadow: 5px 0 40px rgba(0,0,0,0.15);
+      padding: 20px;
+      background: #fff;
+    }
+  }
+}
+.wrap_content_figure{
+  .content_figure{
+    h2{
+      &.tittle{
+        font-family: "Montserrat";
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        color: $gray-base;
+        padding-bottom: 20px;
+        position: relative;
+        margin-top: 0px;
+        &:after{
+          content:"";
+          position: absolute;
+          border-bottom: 3px solid $gray-base;
+          width: 100px;
+          bottom:0px;
+          left: 0px;
+        }
+      }
+    }
+    .content_element{
+      p{
+        font: 400 14px "Droid Serif";
+        margin-top: 50px;
+        color: #666666;
+        line-height: 1.75;
+        margin-bottom: 50px;
+      }
+    }
+    .name_client{
+      font: 400 30px "Condiment";
+      color: #666666;
+    }
+  }
+}
+.products_v3{
+  padding-bottom: 125px;
+  .view_all_pro{
+    width: 100%;
+    text-align: center;
+    a{
+      padding: 8px 25px 8px 25px;
+      border-width: 0px;
+      font-size: 18px;
+      text-decoration: none;
+      position: relative;
+      span{
+        font: 700 18px "Montserrat";
+        color: $gray-base;
+        text-transform: uppercase;
+        position: relative;
+        z-index:1;
+      }
+      &:before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        @include transition(all 0.3s ease 0s);
+        background: #efefef;
+      }
+      &:hover, &:active{
+        &:before{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.newletter{
+  text-align: center;
+  background: #efefef;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  h3{
+    &.title{
+      font: 700 18px "Montserrat";
+      margin-bottom: 18px;
+    }
+  }
+  p{
+    &.sign_up{
+      font: 400 14px "Droid Serif";
+      color: #666666;
+    }
+  }
+  .form_search{
+    text-align: center;
+    margin: auto;
+    position: relative;
+    padding-top: 25px;
+    .input-group{
+      border-radius: 0px;
+      input{
+        width: 100%;
+        height: 46px;
+        padding-right: 10px;
+        text-align: center;
+        border-radius: 0px;
+        border:  1px solid #cccccc;
+        font: 400 14px "Droid Serif";
+        color: $link-hover-color;
+        &:active, &:focus{
+          border-color: $gray-base;
+          box-shadow: none;
+        }
+      }
+      .input-group-btn{
+        button{
+          top: 0;
+          right: 0;
+          height: 46px;
+          border-radius: 0px;
+          color: $link-color;
+          background: $gray-base;
+          border: 1px solid $gray-base;
+          &:hover, &:active, &:focus{
+            background: $link-hover-color;
+            border: 1px solid $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+#slide-1{
+  .bcg{
+    background: url("../images/banner/img1_parallax.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    .hsContainer{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+}
+/*********** Responsive home full width v3 ***********/
+
+@media only screen and (min-width: 1600px) {
+  .wrapper_v3{
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  .wrapper_v3{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    .header_fix{
+      left: 30px;
+      right: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .wrapper_v3{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    .header_fix{
+      left: 0px;
+      right: 0px;
+    }
+  }
+  .vc_separetor{
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .about_jakiro{
+    padding-top: 30px;
+  }
+  .wrap_content_figure{
+    padding-top: 50px;
+    padding-left: 30px;
+  }
+}
+
+//End home full width v3
+
+/*************************************************/
+//Responsive container
+@media (min-width: 768px){
+    .container {
+        width: 735px;
+    }
+}
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+  .container_home_boxed{
+    width: 1230px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+

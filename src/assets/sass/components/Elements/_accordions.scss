@@ -1,0 +1,116 @@
+// Core variables and mixins
+.accordion{
+  .panel{
+    @include box-shadow(0 0px 0px rgba(0,0,0,.05) );
+  }
+  .panel-heading{
+    padding: 15px;
+    position: relative;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      &:before{
+        content: "-";
+        font-size: 22px;
+        font-weight: 600;
+        @include size(20px, 20px);
+        text-align: center;
+        line-height: 16px;
+        display:  inline-block;
+        color: #fff;
+        background: #e41d2e;
+      }
+      &.collapsed:before{
+        content: "\f067";
+        font-family: "FontAwesome";
+        font-size: 15px;
+        line-height: 20px;
+        color: #fff;
+        background: #384551;
+      }
+    }
+  }
+  .panel-body{
+    border-top-color: transparent!important;
+  }
+
+  &.collapse-right{
+    .panel-heading{
+      a:before{
+        position: absolute;
+        @include rtl-right(20px);
+      }
+    }
+  }
+
+  &.collapse-color{
+    .panel-heading a{
+      &:before{
+        color:#fff;
+        background:$engo-accordion-background;
+      }
+    }
+  }
+  &.noborder{
+    .panel-heading{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .panel , .panel-heading, .panel-body{
+      background-color:transparent;
+      border:none;
+    }
+
+  }
+  &.nobackground{
+    .panel , .panel-heading, .panel-body{
+      background-color:transparent;
+    }
+  }
+}
+
+/* accordion style version 1 */
+.accordion-v1{
+  .panel-heading a{
+    &:before{
+      @include rtl-left (-10px);
+      position: absolute;
+    }
+  }
+  .panel , .panel-heading, .panel-body{
+    border:none;
+  }
+}
+
+/* accordion style version 2 */
+.accordion-v2{
+  .panel , .panel-heading, .panel-body{
+    border:none;
+  }
+}
+
+/* accordion style version 3 */
+.accordion-v3{
+  .panel .panel-heading{
+    border-bottom: solid 1px $engo-accordion-border-color;
+  }
+}
+/* accordion style version 4 */
+.accordion-v4{
+  .panel {
+  }
+  .panel-collapse{
+    position: relative;
+    &.in {
+      &:before {
+        position: absolute;
+        content: "";
+        background-color: $engo-accordion-background;
+        top: -51px;
+        left: -1px;
+        height: 3px;
+        width:  100.5%
+      }
+    }
+  }
+}

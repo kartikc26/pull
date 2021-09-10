@@ -1,0 +1,23 @@
+.collapse{
+    display: block !important;
+    position: relative;
+}
+
+.login{
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Montserrat";
+    text-decoration: none;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+}
+.login:hover{
+    background-color: bisque;
+    color: black;
+}
+
+.navbar-user{
+    padding-top: 12px;
+}
+

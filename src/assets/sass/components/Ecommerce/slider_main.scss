@@ -1,0 +1,104 @@
+.fashion_lookbook{
+  font: 400 18px "Montserrat";
+  color: $link-color;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.tp-banner{
+  .hipster_fashion{
+    font: 700 60px "Montserrat";
+    text-transform: uppercase;
+    color: $link-color;
+    letter-spacing: 3px;
+    line-height: 45px;
+  }
+}
+.tp-banner{
+  .shop_now{
+    padding: 22px 48px;
+    line-height: 0px;
+    border: 1px solid $link-color;
+    a{
+      font: 400 14px "Montserrat";
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    &:hover{
+      background: $link-color;
+      a{
+        color: $gray-base
+      }
+    }
+  }
+}
+.slide_v1{
+  .tp-bullets{
+    display: none;
+  }
+}
+.slide_v3{
+  .tp-bullets{
+    float: right;
+    right: 0px;
+    left: auto;
+    display: inline;
+    top: 50%;
+    margin-top: -64px;
+    position: absolute;
+  }
+}
+.tp-banner{
+  .black{
+    color: $gray-base;
+  }
+}
+
+.tp-banner{
+  .shop_now_black{
+    background: $gray-base;
+    border: 1px solid $gray-base;
+  }
+}
+.tp-banner{
+  .over{
+    font: 400 18px "Droid Serif";
+    color: $link-color;
+  }
+}
+.tp-banner{
+  .shop_now_slide4{
+    border: 1px solid $gray-base;
+    a{
+      color: $gray-base;
+    }
+    &:hover{
+      background: $gray-base;
+      a{
+        color: $link-color;
+      }
+    }
+  }
+}
+.slide_simple{
+  .tp-banner{
+    .fashion_lookbook{
+      font: 400 14px "Montserrat";
+      line-height: 100px;
+    }
+    .hipster_fashion{
+      font: 700 48px "Montserrat";
+      line-height: 100px;
+    }
+  }
+}
+
+/***** Responsive slide main ******/
+@media only screen and (min-width: 1100px) {
+  .full_screen{
+    .tp-banner-container-sidebar{
+      left: 0px;
+      width: 100%;
+    }
+  }
+}

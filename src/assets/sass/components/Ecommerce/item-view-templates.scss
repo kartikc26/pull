@@ -1,0 +1,252 @@
+.products{
+    .distance_v1{
+        padding-left: 188px;
+        padding-right: 188px;
+        padding-top: 150px;
+    }
+    .distance{
+        .blog{
+            margin-bottom: 75px;
+        }
+        .product_wrap{
+            .product{
+                overflow: hidden;
+                position: relative;
+                a{
+                    &.product{
+                        position: relative;
+                        display: block;
+                        .new{
+                            position: absolute;
+                            top:15px;
+                            left: 15px;
+                            z-index: 5;
+                            text-transform: uppercase;
+                            font: 700 15px "Montserrat";
+                            color: $gray-base;
+                        }
+                        .sale{
+                            position: absolute;
+                            top:15px;
+                            right:15px;
+                            z-index: 5;
+                            text-transform: uppercase;
+                            font: 700 15px "Montserrat";
+                            color: #cc0000;
+                        }
+                        .product-loop-front{
+                            position: relative;
+                            top:0px;
+                            left: 0px;
+                            opacity: 1;
+                            @include transition(all 0.2s ease 0s);
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .product-loop-back{
+                            position: absolute;
+                            top:0px;
+                            left: 0px;
+                            right:0px;
+                            bottom: 0px;
+                            opacity: 0;
+                            @include transition(all 0.2s ease 0s);
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .action{
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 53px;
+                    .quickview{
+                        position: relative;
+                        width: 50%;
+                        float: left;
+                        background: $gray-base;
+                        padding-left: 54px;
+                        font: 400 14px "Lato";
+                        padding-top: 18px;
+                        padding-bottom: 18px;
+                        -webkit-transform: translate(-250px, 0px);
+                        -ms-transform: translate(-250px, 0px);
+                        -o-transform: translate(-250px, 0px);
+                        transform: translate(-250px, 0px);
+                        @include transition(all 0.4s ease 0s);
+                        opacity: 0.8;
+                        &:before{
+                            content: "\f06e";
+                            font-family: "FontAwesome";
+                            position: absolute;
+                            width: 10px;
+                            left: 25px;
+                            height: 10px;
+                            display: block;
+                            font-size: 18px;
+                        }
+                    }
+                    .wishlist{
+                        position: relative;
+                        width: 50%;
+                        float: left;
+                        background: $gray-base;
+                        padding-left: 54px;
+                        font: 400 14px "Lato";
+                        padding-top: 18px;
+                        padding-bottom: 18px;
+                        -webkit-transform: translate(250px, 0px);
+                        -ms-transform: translate(250px, 0px);
+                        -o-transform: translate(250px, 0px);
+                        transform: translate(250px, 0px);
+                        @include transition(all 0.4s ease 0s);
+                        opacity: 0.8;
+                        &:before{
+                            content: "\f08a ";
+                            font-family: "FontAwesome";
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            left: 25px;
+                            font-size: 18px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .caption{
+                margin-bottom: 20px;
+                .tittle_product{
+                    text-align: center;
+                    a{
+                        font: 400 16px "Montserrat";
+                        color: #666666;
+                        width: 100%;
+                        text-decoration: none;
+                        margin-top: 28px;
+                        display: block;
+                        &:hover, &:active{
+                            color: $gray-base;
+                        }
+                    }
+                }
+                .price{
+                    padding-top: 20px;
+                    padding-bottom: 38px;
+                    text-align: center;
+                    .price_new{
+                        font: 700 20px "Montserrat";
+                        width: 100%;
+                    }
+                    .price_old{
+                        font: 700 16px "Lato";
+                        color: $link-hover-color;
+                        padding-left: 8px;
+                        text-decoration: line-through;
+                    }
+                }
+                .cart{
+                    width: 100%;
+                    text-align: center;
+                    a{
+                        color: $gray-base;
+                        text-transform: uppercase;
+                        font: 700 14px "Montserrat";
+                        border: 1px solid $gray-base;
+                        padding: 12px 24px 12px 24px;
+                        text-decoration: none;
+                        &:hover, &:active{
+                            background: $gray-base;
+                            color: $link-color;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                .product{
+                    a{
+                        &.product{
+                            position: relative;
+                            .new{
+                                color: #cc0000;
+                            }
+                            .sale{
+                                color: $gray-base;
+                            }
+                            .product-loop-front{
+                                opacity: 0;
+                            }
+                            .product-loop-back{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .action{
+                        .quickview{
+                            -webkit-transform: translate(0px, 0px);
+                            -ms-transform: translate(0px, 0px);
+                            -o-transform: translate(0px, 0px);
+                            transform: translate(0px, 0px);
+                        }
+                        .wishlist{
+                            -webkit-transform: translate(0px, 0px);
+                            -ms-transform: translate(0px, 0px);
+                            -o-transform: translate(0px, 0px);
+                            transform: translate(0px, 0px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+.products{
+    .distance_v1{
+        .product_owl, .product2_owl{
+            .owl-dots{
+                display: flex;
+                position: absolute;
+                right: 0px;
+                margin: auto;
+                display: flex;
+                height: 18px;
+                left: 50%;
+                margin-left: -30px;
+                margin-top: 42px;
+                .owl-dot{
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid #cccccc;
+                    background: #cccccc;
+                    margin: 0px 5px 0px 5px;
+                    border-radius: 50%;
+                    &.active{
+                        background: $gray-base;
+                        border:1px solid $gray-base;
+                    }
+                }
+            }
+        }
+    }
+}
+.products{
+    .distance_v1{
+        .pro_simple{
+            .caption{
+                .price{
+                    padding-bottom: 18px;
+                    padding-top: 12px;
+                }
+
+            }
+        }
+    }
+}
+.pro_inner{
+    padding-right: 30px;
+}
+

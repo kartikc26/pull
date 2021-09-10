@@ -1,0 +1,740 @@
+/****************/
+//Products Detail
+/****************/
+.slider-nav{
+  &:hover{
+    cursor: pointer;
+  }
+}
+.zoomContainer {
+  z-index: 999;
+}
+.fancybox-lock .fancybox-overlay{
+  background: rgba(0,0,0,0.6);
+  z-index: 12345454;
+}
+.fancybox-next{
+  &:before{
+    content: "\35";
+    position: absolute;
+    font-family: "ElegantIcons";
+    right: 0px;
+    top: 50%;
+    color: $gray-base;
+    font-size: 28px;
+  }
+  &:hover, &:active{
+    &:before{
+      color: $link-hover-color;
+    }
+  }
+}
+.fancybox-prev{
+  &:before{
+    content: "\34";
+    position: absolute;
+    font-family: "ElegantIcons";
+    left: 0px;
+    top: 50%;
+    color: $gray-base;
+    font-size: 28px;
+  }
+  &:hover, &:active{
+    &:before{
+      color: $link-hover-color;
+    }
+  }
+}
+.product_detail{
+  margin-left: -15px;
+  margin-right: -15px;
+  z-index: 1;
+  margin-top: 85px;
+  position: relative;
+  .slick-list{
+    margin-bottom: 30px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 15px;
+    z-index: 9;
+    background: $link-color;
+    top:0px;
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    display: block;
+    right: 0px;
+    height: 100%;
+    width: 15px;
+    z-index: 9;
+    background: $link-color;
+    top: 0px;
+  }
+  .slider-nav{
+    .slick-prev, .slick-next{
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: $link-hover-color;
+      color: $link-color;
+      &:hover{
+        background: $gray-base;
+      }
+    }
+    .slick-next{
+      right: 20px;
+      z-index: 10;
+    }
+    .slick-prev{
+      left: 20px;
+      z-index: 10;
+    }
+  }
+}
+.slick-list{
+  .slick-slide{
+    margin: 0 15px;
+    &:hover, &:focus{
+      outline: none;
+    }
+  }
+
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+.introduce_product{
+  padding-left: 30px;
+  margin-top: 85px;
+  .tittle_product{
+    margin-bottom: 12px;
+    a{
+      font: 400 16px "Montserrat";
+      color: $gray-base;
+      text-decoration: none;
+      &:hover{
+        color: $link-hover-color;
+      }
+    }
+    .next_prev{
+      float: right;
+      a{
+        span{
+          padding: 4px;
+          background: #ececec;
+          font-size: 15px;
+          color: $link-hover-color;
+        }
+        &:hover{
+          span{
+            color: $link-color;
+            background: $gray-base;
+          }
+        }
+      }
+    }
+  }
+  .notable{
+    margin-bottom: 25px;
+    .notable_star{
+      color: #ffcc00;
+      padding-right: 22px;
+    }
+    .add_your_review{
+      font: 400 13px "Droid Serif";
+      color: $link-hover-color;
+    }
+  }
+  .price{
+    margin-bottom: 18px;
+    span{
+      font: 700 20px "Montserrat";
+      color: $gray-base;
+    }
+  }
+  .available{
+    padding-bottom: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    .title{
+      color: #999999;
+      font: 400 14px "Montserrat";
+    }
+    .in_stock{
+      color: #99cc00;
+      font: 400 14px "Montserrat";
+    }
+  }
+  .note_pro{
+    font: 400 13px/23px "Droid Serif";
+    color: #666666;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .buy_on_ebay{
+    margin-top: 28px;
+    margin-bottom: 32px;
+    a{
+      padding: 12px 30px;
+      background: $gray-base;
+      color: $link-color;
+      text-transform: uppercase;
+      font: 700 14px "Montserrat";
+      text-decoration: none;
+      display: inline-block;
+      &:hover{
+        color: $gray-base;
+        background: $link-hover-color;
+      }
+    }
+  }
+  .categories{
+    margin-bottom: 12px;
+    ul{
+      list-style: none;
+      margin-left: 5px;
+      li{
+        display: inline-block;
+        a{
+          font: 400 14px "Droid Serif";
+          color: #666666;
+          text-decoration: none;
+        }
+        &:hover{
+          a{
+            color: $gray-base;
+          }
+        }
+      }
+    }
+    .title{
+      font: 400 14px "Montserrat";
+      color: $link-hover-color;
+      float: left;
+      padding-right: 10px;
+    }
+  }
+  .share{
+    margin-top: 32px;
+    .title{
+      font: 700 15px "Montserrat";
+      color: #333333;
+      padding-right: 20px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .social{
+      padding: 5px;
+      border-radius: 50%;
+      background: #cccccc;
+      color: $link-color;
+      font-size: 16px;
+      margin: 0 13px;
+      &:hover{
+        background: $gray-base;
+      }
+    }
+  }
+}
+.product_description{
+  margin-top: 82px;
+  z-index: 9;
+  position: relative;
+  .header_pro_description{
+    text-align: left;
+    border-bottom: 1px solid #cccccc;
+    ul{
+      border-bottom: 0px solid;
+      li{
+        a{
+          font: 700 18px "Montserrat";
+          color: #cccccc;
+          text-transform: uppercase;
+          margin: 0px 52px 0px 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        &.active{
+          a{
+            color: $gray-base;
+            padding-bottom: 10px;
+            position: relative;
+            &:after{
+              content:"";
+              border-bottom: 2px solid $gray-base;
+              display: block;
+              height: 2px;
+              width: 100%;
+              position: absolute;
+              bottom: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content_pro_description{
+    margin-top: 40px;
+    .coupling{
+      font: 400 13.01px/24px "Droid Serif";
+      color: #666666;
+    }
+    ul{
+      list-style: none;
+      li{
+        font: 400 13.01px/23px "Droid Serif";
+        color: #666666;
+        position: relative;
+        padding-left: 18px;
+        &:before{
+          content: "\5e";
+          position: absolute;
+          font-family: "ElegantIcons";
+          left: 0px;
+          bottom: 0px;
+        }
+      }
+    }
+  }
+}
+.tittle_related_products{
+  text-align: center;
+  h3{
+    text-transform: uppercase;
+    font: 700 18px "Montserrat";
+    color: $gray-base;
+    margin-bottom: 62px;
+    margin-top: 88px;
+  }
+}
+//Product configurable
+.color_configurable{
+  padding-top: 18px;
+  .title{
+    .star{
+      color: #ff3333;
+    }
+    .colors{
+      float: left;
+      .color{
+        font: 400 14px "Montserrat";
+        color: $gray-base;
+      }
+    }
+  }
+  .field_required{
+    float: right;
+    .field{
+      color: #ff0000;
+      font: 400 13px "Droid Serif";
+      font-style: italic;
+    }
+  }
+  .color_content{
+    display: block;
+    clear: both;
+    margin-top: 35px;
+    ul{
+      list-style: none;
+      li{
+        display: inline-block;
+        padding-right: 15px;
+        &.blue{
+          a{
+            background: #242335;
+          }
+        }
+        &.brown{
+          a{
+            background: #663300;
+          }
+        }
+        &.gray{
+          a{
+            background: $link-hover-color;
+          }
+        }
+        a{
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          position: relative;
+          &:before{
+            content: "";
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            left: -4px;
+            right: -4px;
+            border: 1px solid $link-color;
+          }
+          &:hover{
+            &:before{
+              border: 1px solid $link-hover-color;
+            }
+          }
+        }
+        &.active{
+          a{
+            position: relative;
+            &:after{
+              content: "";
+              position: absolute;
+              top: -4px;
+              bottom: -4px;
+              left: -4px;
+              right: -4px;
+              border: 1px solid $link-hover-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.size_product{
+  &.color_configurable{
+    padding-top: 8px;
+  }
+  .size_content{
+    display: block;
+    clear: both;
+    padding-top: 5px;
+    ul{
+      list-style: none;
+      li{
+        display: inline-block;
+        padding-right: 15px;
+        a{
+          text-decoration: none;
+          font: 400 18px "Montserrat";
+          color: #666666;
+          padding: 6px 12px;
+          background: #cccccc;
+          display: block;
+        }
+        &:hover{
+          a{
+            color: $link-color;
+            background: $gray-base;
+          }
+        }
+        &.active{
+          a{
+            color: $link-color;
+            background: $gray-base;
+          }
+        }
+      }
+    }
+  }
+}
+.wrap_cart{
+  display: inline-block;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  .quatity_pro{
+    float: left;
+    .product-signle-options{
+      .quantity{
+        .minus{
+          background: #efefef;
+          padding: 11px 15px;
+          i{
+            color: #333333;
+          }
+          &:hover{
+            background: #666666;
+            i{
+              color: $link-color;
+            }
+          }
+        }
+        .plus{
+          background: #efefef;
+          padding: 11px 15px;
+          i{
+            color: #333333;
+          }
+          &:hover{
+            background: #666666;
+            i{
+              color: $link-color;
+            }
+          }
+        }
+        input{
+          height: 38px;
+          width: 68px;
+          text-align: center;
+          border: 1px solid #cccccc;
+          margin-left: 6px;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  .buy_on_ebay{
+    margin-left: 10px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    a{
+      padding: 10px 30px;
+    }
+  }
+  .wishlist{
+    float: right;
+    padding: 10px 10px 8px 10px;
+    border: 2px solid #333333;
+    a{
+      text-decoration: none;
+      span{
+        color: #333333;
+        font-size: 15px;
+      }
+    }
+    &:hover{
+      background: $gray-base;
+      a{
+        span{
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+.sku{
+  padding-bottom: 12px;
+  span{
+    color: $gray-base;
+    font: 700 14px "Droid Serif";
+    text-transform: uppercase;
+    &.title{
+      color: $link-hover-color;
+      font: 400 14px "Montserrat";
+      text-transform: uppercase;
+    }
+  }
+}
+.product_quatity{
+  margin-top: 30px;
+  table{
+    thead{
+      tr{
+        th{
+          background: #f2f2f2;
+          border-bottom: 0px;
+        }
+        th, td{
+          border: 1px solid #e5e5e5;
+        }
+      }
+      .head_table{
+        font: 400 14px "Montserrat";
+        color: $link-hover-color;
+      }
+      .head_pro{
+        padding-left: 18px;
+      }
+      .head_price, .head_qty{
+        text-align: center;
+      }
+    }
+    tbody{
+      tr{
+        .title{
+          font: 400 13px "Droid Serif";
+          color: $gray-base;
+          padding-left: 18px;
+        }
+        .price{
+          text-align: center;
+          font: 700 14px "Montserrat";
+          color: $gray-base;
+        }
+        .qty_pro{
+          text-align: center;
+          font: 400 13px "Droid Serif";
+          color: $gray-base;
+        }
+      }
+    }
+  }
+}
+.total_price{
+  .title{
+    font: 400 16px "Montserrat";
+    color: #666666;
+  }
+  .price_total{
+    font: 700 19px "Montserrat";
+    color: $gray-base;
+  }
+}
+.select_choose_color{
+  .title{
+    p{
+      margin-bottom: 20px;
+    }
+  }
+  .choose_color{
+    select{
+      height: 40px;
+      border-radius: 0px;
+      font: 400 13px "Droid Serif";
+      color: $link-hover-color;
+      font-style: italic;
+      &:hover, &:focus{
+        box-shadow: none;
+        color: $gray-base;
+        border: 1px solid $gray-base;
+      }
+    }
+  }
+}
+.select_choose_size{
+  margin-bottom: 35px;
+}
+@media only screen and (min-width: 1200px) {
+  .slider-for{
+    img{
+      width: 100%;
+    }
+  }
+  .product_description {
+
+  }
+  .product_detail{
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 450px;
+    float: right;
+    position: relative;
+    height: 560px;
+    .slider-nav{
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      left: -298px;
+      top: -354px;
+      .slick-slide{
+        img{
+          -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          opacity: 0.2;
+          padding-left: 30px;
+        }
+        &.slick-current{
+          img{
+            opacity: 1;
+          }
+        }
+      }
+      .slick-prev{
+        left: -45px;
+        z-index: 10;
+        top: 40px;
+      }
+      .slick-next{
+        right: -42px;
+        z-index: 10;
+        top: 42px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .introduce_product{
+    padding-left: 0px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .product_description{
+    .header_pro_description{
+      ul{
+        text-align: center;
+        li{
+          width: 100%;
+          text-align: center;
+          a{
+            margin: 0px;
+          }
+          &.active{
+            a{
+              &:after{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrap_cart{
+    .quatity_pro{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .buy_on_ebay{
+      margin-left: 0px;
+    }
+  }
+  .size_product{
+    .size_content{
+      ul{
+        li{
+          padding-right: 8px;
+          a{
+            padding: 6px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 380px) {
+  .introduce_product{
+    padding-left: 0px;
+    .tittle_product .next_prev {
+      float: right;
+      position: absolute;
+      top: -50px;
+      right: 15px;
+    }
+    .notable .notable_star{
+      width: 100%;
+      display: block;
+      padding-bottom: 12px;
+    }
+    .share{
+      .social{
+        font-size: 14px;
+        margin: 0 3px;
+      }
+    }
+    .categories{
+      ul{
+        li{
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}

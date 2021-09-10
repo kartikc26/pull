@@ -1,0 +1,197 @@
+.default{
+  .title{
+    font: 700 36px "Montserrat";
+    text-transform: uppercase;
+    color: $gray-base;
+    text-align: left;
+    margin-top: 0px;
+  }
+  p{
+    margin-bottom: 30px;
+  }
+}
+.brand{
+  margin-top: 90px;
+  .content_brand{
+    p{
+      font: 400 14px/25px "Droid Serif";
+      color: #666666;
+      &.title_content{
+        b{
+          font-weight: 700;
+          color: $gray-base;
+        }
+      }
+    }
+  }
+}
+.contact_us{
+  margin-top: 60px;
+}
+.vc_column-content_brand{
+  ul{
+    list-style: none;
+    li{
+      padding-bottom: 20px;
+      .icon_jakiro{
+        margin-right: 20px;
+        font-size: 18px;
+        color: #525252;
+      }
+      .caption{
+        font: 400 14px "Droid Serif";
+        color: #666666;
+      }
+    }
+  }
+  h5{
+    font: 700 14px "Montserrat";
+    color: $link-hover-color;
+    .time{
+      color: $gray-base;
+      padding-left: 10px;
+    }
+  }
+}
+.our_team{
+  margin-top: 70px;
+  margin-bottom: 97px;
+  .vc_column-content_our_team{
+    .team-member-overlay{
+      margin-bottom: 68px;
+    }
+    .team-member{
+      position: relative;
+      overflow: hidden;
+      .member-avatar{
+        img{
+          width: 100%;
+        }
+      }
+      .member-info{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+        height: 100%;
+        @include transition(all 0.3s ease 0s);
+        h4{
+          font: 700 16px "Montserrat";
+          color: $gray-base;
+          text-transform: uppercase;
+        }
+        .member-job{
+          font: 400 13px "Droid Serif";
+          color:  $gray-base;
+          margin-bottom: 40px;
+        }
+        .member-meta{
+          span{
+            a{
+              text-decoration: none;
+              span{
+                color: $gray-base;
+                padding-right: 20px;
+                font-size: 15px;
+                &:hover{
+                  color: #00aced;
+                }
+              }
+            }
+            &.linkedin{
+              a{
+                span{
+                  padding-right: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:hover{
+        .member-avatar{
+          background: $link-color;
+          opacity: 0.15;
+        }
+        .member-info{
+          -webkit-transform: translate(0px, -150px);
+          -ms-transform: translate(0px, -150px);
+          -o-transform: translate(0px, -150px);
+          transform: translate(0px, -150px);
+        }
+      }
+    }
+    .team_join{
+      position: relative;
+      .member-avatar{
+        img{
+          width: 100%;
+        }
+      }
+      .member-info{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 44%;
+        h4{
+          font: 700 16px "Montserrat";
+          color: $gray-base;
+        }
+      }
+    }
+  }
+}
+/**********************************************/
+//Responsive about us
+@media only screen and (max-width: 1199px) {
+  .breadcrumbs{
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .breadcrumbs{
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .brand{
+    margin-top: 50px;
+    .content_brand{
+      p{
+        font: 400 13px/24px "Droid Serif";
+      }
+    }
+  }
+  .default{
+    .title{
+      font: 700 30px "Montserrat";
+      margin-bottom: 20px;
+    }
+    p{
+      margin-bottom: 15px;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .brand{
+    margin-top: 40px;
+    .content_brand{
+      p{
+        font: 400 12px/24px "Droid Serif";
+      }
+    }
+  }
+  .default{
+    .title{
+      font: 700 24px "Montserrat";
+      margin-bottom: 20px;
+    }
+    p{
+      margin-bottom: 15px;
+    }
+  }
+}
+//End responsive about us

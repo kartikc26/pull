@@ -1,0 +1,155 @@
+.wrap_login{
+  border: 1px solid #cccccc;
+  display: inline-block;
+  width: 100%;
+  margin-top: 150px;
+  margin-bottom: 165px;
+  .login_register{
+    font: 700 20px "Montserrat";
+    text-transform: uppercase;
+    list-style: none;
+    display: inline;
+    .active{
+      color: $gray-base;
+      background: $link-color;
+    }
+    li{
+      width: 50%;
+      background: #e6e6e6;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      a{
+        color: $link-hover-color;
+        text-decoration: none;
+      }
+      &.active{
+        background: $link-color;
+        border-bottom: 1px solid #cccccc;
+        a{
+          color: $gray-base;
+        }
+      }
+    }
+    .login{
+      float: left;
+    }
+    .register{
+      float: right;
+    }
+  }
+  .tab-content{
+    display: inline-block;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    .tab-pane{
+      h3{
+        text-align: center;
+        text-transform: uppercase;
+        font: 700 17px "Montserrat";
+        color: #333333;
+        margin-top: 42px;
+        margin-bottom: 38px;
+      }
+      input{
+        width: 100%;
+        height: 55px;
+        border-radius: 0px;
+        margin-bottom: 24px;
+        box-shadow: none;
+        border: 1px solid #cccccc;
+        font: 400 14px "Droid Serif";
+        color: $gray-base;
+        &:active, &:focus{
+          border: 1px solid $gray-base;
+        }
+      }
+      .help_password{
+        .check_password{
+          float: left;
+          margin-top: 0px;
+          label{
+            font: 400 13px "Droid Serif";
+          }
+        }
+        .forgot_password{
+          font: 400 13px "Droid Serif";
+          color: #0099cc;
+          float: right;
+        }
+      }
+      .login_submit{
+        display: block;
+        float: left;
+        width: 100%;
+        margin-top: 35px;
+        padding-bottom: 68px;
+        margin-bottom: 40px;
+        border-bottom: 1px dashed #CCCCCC;
+        a{
+          padding: 25px 70px 25px 50px;
+          background: $gray-base;
+          text-transform: uppercase;
+          position: relative;
+          font: 700 15px "Montserrat";
+          color: $link-color;
+          text-decoration: none;
+          &:after{
+            position: absolute;
+            content: "\24";
+            font-size: 17px;
+            font-family: "ElegantIcons";
+            right: 45px;
+            bottom: 25px;
+            color: #ffffff;
+          }
+          &:hover{
+            background: $link-hover-color;
+            color: $gray-base;
+            &:after{
+              color: $gray-base;
+            }
+          }
+        }
+      }
+      .your_social{
+        list-style: none;
+        text-align: center;
+        margin-bottom: 45px;
+        li{
+          display: inline-block;
+          padding-right: 30px;
+          a{
+            font: 700 13px "Droid Serif";
+            color: #666666;
+            text-decoration: none;
+            text-transform: uppercase;
+            position: relative;
+            .text_social{
+              padding-left: 10px;
+            }
+            &:after{
+              content: "";
+              position: absolute;
+              right: -15px;
+              border-right: 2px solid #999999;
+              height: 15px;
+              top: 0px;
+            }
+            &:hover{
+              color: #cc9900;
+            }
+          }
+          &:last-child{
+            padding-right: 0px;
+            a{
+              &:after{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

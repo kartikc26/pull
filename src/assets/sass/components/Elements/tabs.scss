@@ -1,0 +1,207 @@
+
+ /* tabs style 1 */ 
+.tab-v1 {
+    .nav-tabs {
+        border-bottom: none;
+       >  li {
+            > a {
+                color: $engo-tabs-a-color;
+                border: none;
+                border-radius:0;
+                padding: $engo-tabs-padding;
+                background: $engo-tabs-background;
+            }
+            &.active > a {
+                color: $engo-tabs-a-color-active;
+                border: none;
+                background:$engo-tabs-background-hover;
+            }
+        }
+    }   
+
+    .tab-content {
+        padding: $engo-tabs-content-padding;
+        background: $engo-tabs-content-background;
+    }
+    &.tab-info  .nav-tabs  > li > a { }
+}
+
+ /* tabs style 2 */
+.tab-v2 {
+    .tab-content {
+        overflow: hidden;
+        padding: $engo-tabs-content-padding;
+        background: $engo-tabs-content-background;
+    }
+    > .nav-tabs {
+        border-bottom: none;
+        >  li {
+            float: none;
+            > a {
+                color: $engo-tabs-a-color;
+                border: none;
+                min-width: 75px;
+                border-radius: 0;
+                margin: 0 0 2px 0;
+                padding: $engo-tabs-padding;
+                background: $engo-tabs-background;
+            }
+            &.active > a {
+                color: $engo-tabs-a-color-active;
+                border: none;
+                background:$engo-tabs-background-hover;
+            }
+        }
+    }
+    &.tabs-left > .nav-tabs {
+        float: left;
+    }
+    &.tabs-right > .nav-tabs {
+        float: right;
+    }
+     
+}
+
+/*Tab v3
+------------------------------------*/
+
+.tab-v3 {
+    .nav-tabs {
+        > li{
+
+        }
+    }
+}
+ 
+
+/*Tab v4
+------------------------------------*/
+.tab-v4 {
+    .nav-tabs {
+        border-bottom: none;
+        > li {
+            > a {
+                color: $engo-tabs-a-color;
+                border: none;
+                border-radius:0;
+                padding: $engo-tabs-padding;
+                background: $engo-tabs-background;
+            }
+            &.active > a {
+                color: $engo-tabs-a-color-active;
+                border: none;
+                background:$engo-tabs-background-hover;
+            }
+        }
+    }
+    .tab-content {
+        padding: $engo-tabs-content-padding;
+    }
+}
+/*Tab v5
+------------------------------------*/
+.tab-v5 {
+    .nav-tabs {
+        border-bottom: none;
+        > li {
+            > a {
+                color: $engo-tabs-a-color;
+                border: none;
+                border-radius: 0;
+                background: $engo-tabs-background;
+                margin-right: 2px;
+                padding: $engo-tabs-padding;
+                border-top: 2px solid transparent;
+                border-left: 1px solid transparent;
+                border-right: 1px solid transparent;
+            }
+            &.active > a {
+                color: #222;
+                border: none;
+                background: $engo-tabs-primary-background;
+                border-top: 2px solid $engo-tabs-primary-background-hover;
+                border-left: 1px solid $engo-tabs-border-color;
+                border-right: 1px solid $engo-tabs-border-color;
+            }
+        }
+    }
+    > .tab-content {
+        padding: $engo-tabs-content-padding;
+        border: $engo-tabs-content-border
+    }
+}
+
+/*Tab v6
+------------------------------------*/
+.tab-v6 {
+    .tab-heading {
+        overflow: hidden;
+        background:  $engo-tabs-v6-heading-background;
+        padding: $engo-tabs-v6-heading-padding;
+        border-top: 2px solid  $engo-tabs-v6-heading-border-top-color;
+        border-left: 1px solid $engo-tabs-v6-heading-border-color;
+        border-right: 1px solid $engo-tabs-v6-heading-border-color;
+    }
+    h2.category {
+        margin: 0;
+        float: left;
+        text-transform: uppercase;
+    }
+    .nav-tabs {
+        float: right;
+        border-bottom: none;
+        > li {
+            > a {
+                color: $engo-tabs-v6-a-color;
+                border: none;
+                border-radius:0;
+                padding: $engo-tabs-padding;
+            }
+            &.active > a {
+                color:red;
+             
+                &:hover, &:focus {
+                    color: $engo-tabs-v6-a-color-active;
+                }
+                color: #222;
+                &:hover, &:focus {
+                    border:none;
+                    color: $engo-tabs-v6-a-color-active;
+                }
+            }
+            > a:hover {
+                background: inherit;
+            }
+        }
+    }
+    .tab-content {
+        padding: $engo-tabs-content-padding;
+        border:$engo-tabs-v6-content-border-color;
+    }
+}
+
+.tab-v8{
+    .nav-inner{
+        text-align: center;
+
+    }
+   .nav-tabs {
+         display: inline-block;   
+         border-bottom: solid 1px #CCC;
+        li{
+            a {
+                border:none;
+                background:transparent;
+                &.active, &:focus, &:hover{
+                    background:transparent;
+                    border-top:none;
+                }
+            }
+            &.active, &:focus, &:hover{
+                background:transparent;
+                border-top:none;
+                border-bottom:solid 2px $engo-tabs-background;
+            }
+        }
+    }
+}

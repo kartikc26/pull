@@ -1,0 +1,77 @@
+.breadcrumbs {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  background-color: #f9f9f9;
+  padding: 30px 0;
+  z-index: 1;
+}
+
+.breadcrumbs h2 {
+  margin: 0;
+  font-weight: 400;
+  position: relative;
+}
+
+.breadcrumbs .breadcrumb-links {
+  margin: 6px 0 0;
+  position: relative;
+}
+
+.breadcrumbs .breadcrumb-links > li {
+  display: inline-block;
+}
+
+.breadcrumbs .breadcrumb-links > li + li:before {
+  color: #757575;
+  content: "\f105";
+  font-family: FontAwesome;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.breadcrumbs .breadcrumb-links > .active {
+  color: #999999;
+}
+
+.breadcrumbs.light-style {
+  color: #fff;
+  border: 0px;
+}
+
+.breadcrumbs.light-style h2 {
+  color: #fff;
+}
+
+.breadcrumbs.light-style .breadcrumb-links > li a {
+  color: #FFF;
+}
+
+.breadcrumbs.light-style .breadcrumb-links > li + li:before {
+  color: #fff;
+}
+
+.breadcrumbs.light-style .breadcrumb-links > .active span {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.breadcrumbs-center {
+  text-align: center;
+  padding: 50px;
+}
+
+.breadcrumbs-center h2 {
+  float: none;
+}
+
+.breadcrumbs-center .breadcrumb-links {
+  text-align: center;
+}
+
+.breadcrumbs-left h2 {
+  float: none;
+}
+
+.breadcrumbs-right h2 {
+  float: none;
+}

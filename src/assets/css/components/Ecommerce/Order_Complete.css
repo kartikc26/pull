@@ -1,0 +1,49 @@
+.main_content_order {
+  text-align: center;
+}
+
+.main_content_order img {
+  margin-top: 55px;
+}
+
+.main_content_order p.thank {
+  font: 400 36px "MouseMemoirsRegular";
+  color: #384551;
+  margin-top: 50px;
+  margin-bottom: 55px;
+}
+
+.main_content_order .buttons {
+  text-transform: uppercase;
+  margin-bottom: 136px;
+}
+
+.main_content_order .buttons .home {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main_content_order .buttons .home span {
+  font: 400 30px "MouseMemoirsRegular";
+  background: url(../images/products/product_detail/background_add_wishlist.png) no-repeat;
+  background-size: 230px 70px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-right: 120px;
+  padding-left: 65px;
+}
+
+.main_content_order .buttons .shopping {
+  text-decoration: none;
+}
+
+.main_content_order .buttons .shopping span {
+  background: url(../images/products/product_detail/background_add_card.png) no-repeat;
+  color: #fff;
+  font: 400 30px "MouseMemoirsRegular";
+  background-size: 252px 70px;
+  padding-left: 40px;
+  padding-right: 65px;
+  padding-bottom: 84px;
+  padding-top: 15px;
+}

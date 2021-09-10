@@ -1,0 +1,300 @@
+/** 6.5.1. General **/
+
+/** 6.5.2. Footer Version 1 **/
+.footer_v1{
+    .footer_wrap{
+        .footer_top{
+            width: 100%;
+            display: inline-block;
+            background: #2b2b2b;
+            text-align: center;
+            padding-top: 140px;
+            padding-bottom: 130px;
+            .footer-menu{
+                padding-top: 48px;
+                ul{
+                    &.footer-nav{
+                        list-style: none;
+                        text-align: center;
+                        li{
+                            display: inline-block;
+                            a{
+                                padding-left: 22px;
+                                padding-right: 22px;
+                                position: relative;
+                                text-decoration: none;
+                                font: 400 16px "Lato";
+                                border-left:1px solid $link-hover-color;
+                                line-height: 1;
+                                display: block;
+                            }
+                            &:first-child{
+                                a{
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .social{
+                display: inline-block;
+                width: 100%;
+                padding-top: 25px;
+                a{
+                    padding-left: 13px;
+                    padding-right: 13px;
+                    text-decoration: none;
+                }
+            }
+        }
+        .footer_bottom{
+            background: #252525;
+            text-align: center;
+            padding: 1.75em 0;
+            border-bottom: 2px solid #303030;
+            .copy_right{
+                font: 400 13px "Lato";
+                color: $link-hover-color;
+                span{
+                    &.logo{
+                        font: 900 13px "Lato";
+                        color: $link-color;
+                    }
+                }
+            }
+        }
+    }
+}
+/** 6.5.2. Footer home simple **/
+.footer_top_simple{
+    padding-top: 88px;
+    .footer-widget-wrap{
+        .footer-widget-col{
+            .textwidget{
+                p{
+                    font: 400 13px/26px "Droid Serif";
+                    color: $link-hover-color;
+                    padding-bottom: 10px;
+                }
+                .company-info{
+                    list-style: none;
+                    li{
+                        display: flex;
+                        padding-top: 15px;
+                        border-top: 1px solid #e5e5e5;
+                        padding-bottom: 15px;
+                        .icon_jakiro{
+                            color: $link-hover-color;
+                            font-size : 18px;
+                            padding-top: 3px;
+                        }
+                        .caption{
+                            padding-left: 30px;
+                            font: 400 13px/26px "Droid Serif";
+                            color: $link-hover-color;
+                        }
+                    }
+                }
+            }
+            .widget{
+                h3{
+                    margin-top: 0px;
+                    text-transform: uppercase;
+                    font: 700 18px "Montserrat";
+                    color: $gray-base;
+                    margin-bottom: 52px;
+                }
+            }
+            .widget_tag_cloud{
+                a{
+                    border: 1px solid #e8e8e8;
+                    border-radius: 0;
+                    color: #999999;
+                    float: left;
+                    font-size: 1em;
+                    line-height: 1.4;
+                    margin: 0 0.769231em 0.769231em 0;
+                    padding: 0.4em 0.7em;
+                    text-align: center;
+                    @include transition(all 0.3s ease 0s);
+                    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s, text-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
+                    vertical-align: middle;
+                    text-decoration: none;
+                    font-family: "Droid Serif";
+                    &:hover, &:active{
+                        background: $gray-base;
+                        color: $link-color;
+                    }
+                }
+            }
+            .widget_recent_entries{
+                ul{
+                    list-style: none;
+                    li{
+                        position: relative;
+                        border-bottom: 1px solid #e5e5e5;
+                        padding-bottom: 12px;
+                        padding-top: 12px;
+                        a{
+                            font: 400 13px/26px "Droid Serif";
+                            color: $link-hover-color;
+                            padding-left: 20px;
+                            text-decoration: none;
+                            &:before{
+                                content: "\39";
+                                font-family: "ElegantIcons";
+                                font-size: 14px;
+                                position: absolute;
+                                left: 0px;
+                                color: $link-hover-color;
+                            }
+                            &:hover, &:active{
+                                color: $gray-base;
+                                &:before{
+                                    color: $gray-base;
+                                }
+                            }
+                        }
+                        &:first-child{
+                            padding-top: 0px;
+                            margin-top: -5px;
+                        }
+                        &:last-child{
+                           border: none;
+                        }
+                    }
+                }
+            }
+            .widget-mailchimp{
+                .mailchimp-form-content{
+                    margin-top: -5px;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #ebebeb;
+                    .input-group{
+                        input{
+                            height: 45px;
+                            border-radius: 0px;
+                            font: 400 13px "Droid Serif";
+                            font-style: italic;
+                            outline: none;
+                            box-shadow: none;
+                            outline-offset:0px;
+                            &:hover, &:active, &:focus{
+                                outline: none;
+                                box-shadow: none;
+                                outline-offset:0px;
+                                border-color: #cccccc;
+                            }
+                        }
+                        span{
+                            button{
+                                width: 50px;
+                                height: 45px;
+                                line-height: 40px;
+                                border-radius: 0px;
+                                background: $gray-base;
+                                outline: none;
+                                box-shadow: none;
+                                outline-offset:0px;
+                                span{
+                                    font-size: 20px;
+                                    color: $link-color;
+                                }
+                                &:hover, &:active, &:focus{
+                                    background: $link-hover-color;
+                                    span{
+                                        color: $gray-base;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                label{
+                    font: 400 13px "Droid Serif";
+                    color: $link-hover-color;
+                    padding-bottom: 30px;
+                }
+            }
+            .social-widget{
+                margin-top: 20px;
+                a{
+                    padding-right: 20px;
+                    i{
+                        font-size: 16px;
+                        color: $link-hover-color;
+                        &:hover, &:active{
+                            color: $gray-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.footer_bottom{
+    display: block;
+    text-align: center;
+    background: $gray-base;
+    color: $link-hover-color;
+    font: 400 13px "Montserrat";
+    line-height: 66px;
+    p{
+        margin-bottom: 0px;
+        .logo{
+            font: 700 13px "Montserrat";
+            color: $link-color;
+        }
+    }
+}
+/** 6.5.3. Footer home simple **/
+.footer_boxed{
+    .footer_bottom{
+        background: none;
+        .container_home_boxed{
+            background: $gray-base;
+        }
+    }
+}
+
+//Responsive footer v1
+@media only screen and (max-width: 800px) {
+    .footer_v1{
+        .footer_wrap{
+            .footer_top{
+                padding-top: 80px;
+                padding-bottom: 60px;
+                .footer-menu{
+                    padding-top: 30px;
+                    ul{
+                        &.footer-nav{
+                            li{
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .footer_v1 .footer_wrap .footer_top .footer-menu ul.footer-nav li a{
+        border: none;
+    }
+}
+//End responsive footer v1
+/****************************************************/
+//Responsive home simple
+@media only screen and (max-width: 900px) {
+    .footer_top_simple{
+        .footer-widget-col{
+            margin-bottom: 50px;
+            &:nth-child(3){
+                clear: both;
+            }
+        }
+    }
+}
+//End responsive home simple

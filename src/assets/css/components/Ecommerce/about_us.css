@@ -1,0 +1,176 @@
+.about_info {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.about_info p {
+  line-height: 24px;
+  color: #888888;
+  font: 400 16px "BellGothicStdLight";
+}
+
+.about_info p.topiary {
+  padding-top: 30px;
+}
+
+.about_info p.share {
+  padding-top: 70px;
+}
+
+.about_info p .share_this {
+  padding-top: 160px;
+  color: #384551;
+  font: 400 24px "MouseMemoirsRegular";
+  text-transform: uppercase;
+}
+
+.about_info p .img_conn a img {
+  padding-left: 25px;
+}
+
+.service_about ul li {
+  border: 1px solid #ecf0f1;
+}
+
+.service_about ul li h3 {
+  color: #384551;
+  font: 400 30px "MouseMemoirsRegular";
+}
+
+.service_about ul li p {
+  color: #888888;
+  font: 400 16px "BellGothicStdLight";
+  padding-bottom: 40px;
+}
+
+.service_about ul li:hover {
+  background: #f9f9f9;
+}
+
+.service_about ul li .icon-wrap-icon {
+  padding-top: 45px;
+  height: 20px;
+  padding-bottom: 70px;
+}
+
+.about_us h2 {
+  color: #384551;
+  font: 400 48px "MouseMemoirsRegular";
+  padding-bottom: 22px;
+}
+
+.about_us .accordion .panel-group .panel-heading {
+  background: none;
+  border-bottom: 1px solid #e9e9ea;
+  padding-left: 0px !important;
+}
+
+.about_us .accordion .panel-group .panel-heading h4 a {
+  font: 400 24px "MouseMemoirsRegular";
+  color: #384551;
+}
+
+.about_us .accordion .panel-group .panel-collapse .panel-body {
+  color: #888888;
+  font: 400 16px "BellGothicStdLight";
+}
+
+.about_our {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.out_skill h2 {
+  color: #384551;
+  font: 400 48px "MouseMemoirsRegular";
+  padding-bottom: 30px;
+}
+
+.out_skill .bar-chart .progress-title small {
+  color: #384551;
+  text-transform: capitalize;
+  font: 400 14px "BellGothicStdBold";
+}
+
+.out_skill .bar-chart .progress-title .text-success {
+  float: right;
+  color: #384551;
+  font: 400 14px "BellGothicStdBold";
+}
+
+.title-member h3 {
+  color: #384551;
+  font: 400 48px "MouseMemoirsRegular";
+  text-align: center;
+  background: url(../images/products/line_all_category.png) no-repeat;
+  text-transform: uppercase;
+  background-position-y: 35px;
+  line-height: 0px;
+  padding-bottom: 62px;
+  background-position-x: 535px;
+}
+
+.team-members {
+  transition: all 0.5s ease-out;
+}
+
+.team-members .merber {
+  transition: all 0.5s ease-out;
+  height: 465px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.team-members .merber:hover {
+  margin-bottom: -30px;
+}
+
+.team-members .merber:hover .social {
+  display: block;
+}
+
+.team-members .merber .social {
+  display: none;
+  padding-left: 32px;
+  transition: all 0.5s ease-out;
+}
+
+.team-members .merber .social ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.team-members .merber .social ul li {
+  float: left;
+  text-align: center;
+}
+
+.team-members .merber .social ul li a i {
+  color: #384551;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.team-members .merber .social ul li a i:hover, .team-members .merber .social ul li a i:focus {
+  color: red;
+}
+
+.team-members .merber .title-merber {
+  text-align: center;
+}
+
+.team-members .merber .title-merber h3 {
+  color: #384551;
+  font: 400 24px "MouseMemoirsRegular";
+  text-transform: uppercase;
+  line-height: 0px;
+}
+
+.team-members .merber .title-merber .job {
+  color: #e41d2e;
+  font: 400 14px "BellGothicStdBold";
+  line-height: 0px;
+  padding-top: 12px;
+}

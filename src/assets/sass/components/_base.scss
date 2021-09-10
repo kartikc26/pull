@@ -1,0 +1,176 @@
+/** 2.2. Default base **/
+.input_v1 {
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+        font-size: 18px;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+        font-size: 18px;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+        font-size: 18px;
+    }
+    &:-ms-input-placeholder {  
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+        font-size: 18px;
+    }
+}
+@media (max-width: 450px ) {
+    .order{
+        .input-group{
+            .form-control{
+                padding: 17px 12px;
+                padding-top: 4% !important;
+            }
+            .input_v1 {
+                &::-webkit-input-placeholder {
+                    font-size: 12px;
+                }
+
+                &:-moz-placeholder { /* Firefox 18- */
+                    font-size: 12px;
+                }
+
+                &::-moz-placeholder {  /* Firefox 19+ */
+                    font-size: 12px;
+                }
+                &:-ms-input-placeholder {
+                    font-size: 12px;
+                }
+            }
+            span{
+                button{
+                    &.btn{
+                        font-size: 12px !important;
+                        position: absolute;
+                        top: -8px;
+                        right: -8px;
+                    }
+                }
+            }
+        }
+    }
+}
+.input_v2{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+        color: #fff !important;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #fff !important;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: #fff !important;
+    }
+    &:-ms-input-placeholder {
+        color: #fff !important;
+    }
+}
+.input_v3{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+        color: #384551 !important;
+        font-family: 'KingCoolKC' !important;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #384551 !important;
+        font-family: 'KingCoolKC' !important;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: #384551 !important;
+        font-family: 'KingCoolKC' !important;
+        font-size: 17px !important;
+    }
+    &:-ms-input-placeholder {
+        color: #384551 !important;
+        font-family: 'KingCoolKC' !important;
+    }
+}
+.input2_v3{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+    }
+    &:-ms-input-placeholder {
+        color: #fff !important;
+        font-family: 'KingCoolKC';
+    }
+}
+/** 2.2.1.	Button **/
+.btn {
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    &.btn-primary {
+        color: $brand-primary;
+    }
+}
+.input_404_pages{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+        color: #384551 !important;
+        opacity: 0.5;
+        font-family: 'KingCoolKC';
+        font-size: 18.35px;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #384551 !important;
+        opacity: 0.5;
+        font-family: 'KingCoolKC';
+        font-size: 18.35px;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: #384551 !important;
+        opacity: 0.5;
+        font-family: 'KingCoolKC';
+        font-size: 18.35px;
+    }
+    &:-ms-input-placeholder {
+        color: #384551 !important;
+        opacity: 0.5;
+        font-family: 'KingCoolKC';
+        font-size: 18.35px;
+    }
+}
+
