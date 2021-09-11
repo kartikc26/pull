@@ -17,7 +17,7 @@ import { RegisterComponent } from '../register/register.component';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string = '';
-    
+
   data:any;
   constructor(private http: HttpClient,
     private router: Router,
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private modal: NgbModal) {
       this.createForm();
       console.log(this.loginForm)
-    
+
   }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   onSubmit(){
-    console.log(this.loginForm.value) 
+    console.log(this.loginForm.value)
     // let a=CryptoJS.AES.encrypt(this.loginForm.value.password, environment.cryptKey.toString()).toString()
     // console.log(a)
     // let b=CryptoJS.AES.decrypt(a, environment.cryptKey.toString()).toString(CryptoJS.enc.Utf8);
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('isUserLoggedIn','true');
           console.log(localStorage.getItem('isUserLoggedIn'));
           this.activeModal.close();
-          // window.location.reload()
+          window.location.reload()
         }else{
           console.log('invalid pwd')
         }

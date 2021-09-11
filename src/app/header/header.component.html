@@ -142,12 +142,45 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar-user">
-                <a title="My Account" href="#" class="navbar-user">
-                    <i class="fa fa-user" *ngIf="isLogIn"></i>
-                    <button class="btn login p-1" *ngIf="!isLogIn" (click)="login()">Login/Register</button>
+<!--            <div class="navbar-user">-->
+<!--                <a title="My Account" href="" class="navbar-user">-->
+<!--                    <i class="fa fa-user" *ngIf="isLogIn">-->
+<!--                    </i>-->
+<!--                    <button class="btn login p-1" *ngIf="!isLogIn" (click)="login()">Login/Register</button>-->
+<!--                </a>-->
+<!--            </div>-->
+          <div class="navcart" *ngIf="isLogIn">
+            <div class="navcart-wrap">
+              <div class="navbar-minicart">
+                <a class="minicart-link" href="#">
+                  <span class="minicart-icon" ><i class="fa fa-user" ></i></span>
                 </a>
+                <div class="mega_drop_menu mega_dropdown_nav_cart_v1">
+                  <div class="menu-menu">
+                    <ul class="block_level2">
+                      <li class="level-02"><a routerLink="account">My Account</a>
+                      <li class="level-02"><a routerLink="wishlist">Wishlist</a>
+                      <li class="level-02"><a routerLink="orders">Orders</a>
+                      <li class="level-02"><a href="">XYZ</a>
+                      <li class="level-02"><button class="btn" (click)="logout()">Logout</button>
+<!--                        <div class="mega_drop_menu mega_dropdown_shortcodes_v1">-->
+<!--                          <div class="menu-menu">-->
+<!--                            <ul class="block_level2">-->
+<!--                              <li class="level-02"><a href="about_us.html">About Us</a></li>-->
+<!--                              <li class="level-02"><a href="contact_us.html">Contact Us</a></li>-->
+<!--                              <li class="level-02"><a href="check_out.html">checkout</a></li>-->
+<!--                              <li class="level-02"><a href="log_in.html">login</a></li>-->
+<!--                            </ul>-->
+<!--                          </div>-->
+<!--                        </div>-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <button class="btn login p-1" *ngIf="!isLogIn" (click)="login()">Login/Register</button>
         </div>
     </div>
     <div class="header-search-overlay hide">

@@ -11,8 +11,8 @@ export class DataService {
 
   constructor(private http: HttpClient,
     private router: Router) {}
-    
-  
+
+
     register(data:any){
       console.log(JSON.stringify(data))
       return this.http.post(environment.serviceUrl+'registeruser.php', JSON.stringify(data)).pipe(
@@ -21,7 +21,7 @@ export class DataService {
         })
       )
     }
-  
+
     login(data:any){
       console.log(JSON.stringify(data))
       return this.http.post(environment.serviceUrl+'login.php', JSON.stringify(data)).pipe(
@@ -29,5 +29,9 @@ export class DataService {
           return res;
         })
       )
+    }
+
+    logout(){
+    localStorage.setItem("isUserLoggedIn","false")
     }
 }
