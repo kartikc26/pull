@@ -9,6 +9,7 @@ import { AccountComponent } from './user/account/account.component';
 import { CartComponent } from './user/cart/cart.component';
 import { OrdersComponent } from './user/orders/orders.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
+import {ErrorComponent} from "./error/error.component";
 
 const routes: Routes = [
   {path: "", component:HomeComponent, pathMatch:"full"},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: "birthday", component:ProductsComponent, data: {productType: 'birthday'}},
   {path: "anniversary", component:ProductsComponent, data: {productType: 'anniversary'}},
   {path: "wedding", component:ProductsComponent, data: {productType: 'wedding'}},
-  {path: "miscellaneous", component:ProductsComponent, data: {productType: 'miscellaneous'}}
+  {path: "miscellaneous", component:ProductsComponent, data: {productType: 'miscellaneous'}},
+  {path: "**", component:ErrorComponent}
 
 ];
 
