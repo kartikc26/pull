@@ -8324,8 +8324,9 @@ sup {
   color: black; }
 
 .introduce_product {
-  padding-left: 30px;
-  margin-top: 85px; }
+  /*padding-left: 30px;*/
+  /*margin-top: 85px; */
+}
   .introduce_product .tittle_product {
     margin-bottom: 12px; }
     .introduce_product .tittle_product a {
