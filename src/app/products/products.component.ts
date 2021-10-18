@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {DataService} from "../core/service/data.service";
+import {Product} from "../model/product";
 
 @Component({
   selector: 'app-products',
@@ -7,11 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  prod = ["product 1","product 2","product 3","product 4","product 5","product 6","product 7"]
-
-  constructor() { }
+  prod:Product[] |undefined
+  prodType:any |undefined
+  constructor(private route: ActivatedRoute,
+              private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe( data => {
+      console.log("data from route:"+data.productType)
+      this.prodType=data.productType
+      }
+    )
+    this.dataService.getProducts(this.prodType).subscribe(products=>{
+      console.log(products)
+      this.prod=products
+
+    })
   }
+
+  // ngOnDestroy() {
+  //   this.prodType.unsubscribe();
+  // }
 
 }
