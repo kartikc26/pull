@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorComponent } from './error/error.component';
+import { PipesModule} from "./core/pipes/pipes.module";
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

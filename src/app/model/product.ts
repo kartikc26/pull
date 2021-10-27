@@ -5,7 +5,7 @@ export interface Product{
   discount:number
   weight:String
   size:String
-  images:String
+  image:String
   description:String
   highlights:String
   noi:number

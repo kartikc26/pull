@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import {Observable} from "rxjs";
 import {Product} from "../../model/product";
 import {Person} from "@angular/cli/utilities/package-json";
+import {Rating} from "../../model/rating";
+import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
 
 @Injectable({
   providedIn: 'root'
@@ -42,4 +44,14 @@ export class DataService {
       console.log(environment.serviceUrl+'getproducts.php?category='+category)
       return this.http.get<Product[]>(environment.serviceUrl+'getproducts.php?category='+category)
     }
+
+    getRating(product_id:string): Observable<Rating>{
+    return this.http.get<Rating>(environment.serviceUrl+'getrating.php?product_id='+product_id)
+    }
+
+    getProductData(id:string): Observable<Product[]>{
+    return  this.http.get<Product[]>(environment.serviceUrl+'getproductdata.php?product_id='+id)
+    }
+
+
 }

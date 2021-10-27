@@ -1,40 +1,50 @@
 <p>products works!</p>
 <h1 class="text-center">Find your perfect gift !!!</h1>
 <div class="row mx-5">
-  <div class="col-lg-3 col-sm-4 col-6 p-0 m-0"  *ngFor="let product of prod">
+  <div class="col-lg-3 col-sm-4 col-6 p-0 m-0 box-shadow"  *ngFor="let product of prod" >
     <div class="introduce_product border m-2 p-2">
-      <img class="img img-responsive p-2" src="./assets/img-01.jpeg" alt="img-1">
-      <div class="tittle_product">
-        <a href="">{{product.product_name}}</a>
+      <img class="img img-responsive p-2" src="./assets/img-01.jpeg" alt="img-1" (click)="imgClick(product.product_id)">
+      <div class="tittle_product text-center">
+        <span>{{product.product_name}}</span>
       </div>
-      <div class="notable">
-        <span class="rating p-1 rounded">4.2</span>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <span class="add_your_review"> 20 Review(s) | Add your review</span>
-      </div>
+<!--      <div class="notable">-->
+<!--        <span class="rating p-1 rounded">{{}}</span>-->
+<!--        <i class="fa fa-star" aria-hidden="true"></i>-->
+<!--        <span class="add_your_review"> 20 Review(s) | Add your review</span>-->
+<!--      </div>-->
       <div class="price">
-        <span class="price_new">{{product.price}}</span>
+        <p>
+        <span class="price_new">₹{{product.price | discPrice:product.discount}}</span>&nbsp;
+        <span class="origin-amt">₹{{product.price.split("~")[0]}}</span>&nbsp;
+        <span class="">{{product.discount}}%</span>
+        </p>
+      </div>
+      <div class="note_pro">
+        <span>Sizes: {{product.size | replace:'~':' / '}}</span>
       </div>
       <p class="note_pro">{{product.description}}</p>
-      <div class="buy_on_ebay">
-        <a href="">buy on ebay.com</a>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-outline-primary w-100">Customize</button>
+        </div>
+
       </div>
-      <div class="categories">
-        <p class="title">Categories: </p>
-        <ul>
-          <li><a href="" class="">Men, </a></li>
-          <li><a href="" class="">Hipster, </a></li>
-          <li><a href="" class="">T-shirt, </a></li>
-          <li><a href="" class="">Short T-Shirt, </a></li>
-        </ul>
-      </div>
-      <div class="categories">
-        <p class="title">Tags: </p>
-        <ul>
-          <li><a href="" class="">Men’s Clothing, </a></li>
-          <li><a href="" class="">T-shirt </a></li>
-        </ul>
-      </div>
+<!--      <div class="categories">-->
+<!--        <p class="title">Categories: </p>-->
+<!--        <ul>-->
+<!--          <li><a href="" class="">Men, </a></li>-->
+<!--          <li><a href="" class="">Hipster, </a></li>-->
+<!--          <li><a href="" class="">T-shirt, </a></li>-->
+<!--          <li><a href="" class="">Short T-Shirt, </a></li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="categories">-->
+<!--        <p class="title">Tags: </p>-->
+<!--        <ul>-->
+<!--          <li><a href="" class="">Men’s Clothing, </a></li>-->
+<!--          <li><a href="" class="">T-shirt </a></li>-->
+<!--        </ul>-->
+<!--      </div>-->
     </div>
   </div>
 </div>

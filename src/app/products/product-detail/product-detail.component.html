@@ -1,1 +1,240 @@
-<p>product-detail works!</p>
+<div class="container-fluid padd-full" *ngFor="let product of prod">
+  <div class="row product-name">
+    <div class="col-12 p-0"> Gifts
+       <i class="fa fa-angle-right mr-3 ml-3" aria-hidden="true"></i>
+      <b> {{category}} </b></div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-12 col-md-6">
+      <div class="row top-frame">
+        <div class="col-12 col-sm-2 pt-5 pr-0 pl-0 product-images">
+                    <div *ngFor="let image of product.image.split('~'); let i=index;" >
+                      <img class="image-view" src="assets/images/products/{{prodId}}/{{image}}.jpg" alt="dds">
+                    </div>
+        </div>
+        <div class="col-12 col-sm-10 text-center carousal">
+                    <img class="current-image img-responsive" src="assets/images/products/{{prodId}}/i1.jpg" alt="main">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div>
+        <!--        <p>{{product.manufacturer}}</p>-->
+        <!--        <h2>{{product.familyName}}</h2>-->
+        <a href="#">Save up to $580 on iPhone 11 Pro Max. See how.</a>
+        <hr>
+      </div>
+      <div>
+        <p><b>Size</b></p>
+        <span *ngFor="let size of product.size.split('~'); let i=index;">
+                            <button class="mr-3 memory-button"
+                                    (click)="sizeSelect(i)">{{size}}</button>
+                        </span>
+        <hr>
+      </div>
+      <div>
+        <p class="text-uppercase"><b>COLOR</b></p>
+<!--        <span *ngFor="let color of product.colorOptions; let i=index;">-->
+<!--                            <span>-->
+<!--                                <button class="mr-3 btnCircle" (click)="colorSelect(i)"><img src={{color.imagePath}}-->
+<!--                                                                                             alt=""></button>-->
+<!--                            </span>-->
+<!--                </span>-->
+        <!-- <div *ngIf="productDetails.productAvailability; else status"> -->
+        <div>
+          <p><b>In stock.</b> Estimated ship date xvdg - adasd</p>
+        </div>
+        <ng-template #status>
+          <p><b>Out of Stock.</b></p>
+        </ng-template>
+        <hr>
+      </div>
+
+      <div>
+        <p class="text-uppercase"><b>pay in full today</b></p>
+        <h5><b>{{product.price}}</b></h5>
+        <p>+ tax</p>
+        <p>Qualifying services required.</p>
+      </div>
+      <button class="btn-add-to-cart"><b>Add to Cart</b></button>
+    </div>
+  </div>
+
+  <!-- lower part -->
+  <div class="container-fluid mt-2 p-0">
+    <ul class="row nav nav-tabs " role="tablist">
+
+      <li class="col-6 nav-item">
+        <a class="nav-link active li-spec-review" data-toggle="tab" href="#specifications"><b>Specifications</b></a>
+      </li>
+      <li class="col-6 nav-item">
+        <a class="nav-link li-spec-review" data-toggle="tab" href="#reviews"><b>Reviews</b></a>
+      </li>
+    </ul>
+
+
+    <div class="tab-content">
+      <div id="specifications" class="container tab-pane active"><br>
+
+        <div class="row">
+          <div class="col-12 p-3">
+            <h4>Key Features</h4>
+          </div>
+        </div>
+
+<!--        <div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-12 col-md-6 ">-->
+<!--              <div class="spec-text mb-2 pt-4">-->
+<!--                <img src="../../../../assets/product Detail Specification/specification-camera.svg" alt=""-->
+<!--                     class="spec-img-size">-->
+<!--                <p class="p-bold"><b>{{product.keyFeatures[2].value}}</b>-->
+<!--                <p>-->
+<!--              </div>-->
+<!--              <div class="spec-text pt-3">-->
+<!--                <img src="../../../../assets/product Detail Specification/specification-battery.svg" alt=""-->
+<!--                     class="spec-img-size">-->
+<!--                <p class="p-bold"><b>{{product.keyFeatures[1].value}} Talktime</b></p>-->
+<!--                <p>{{product.keyFeatures[0].value}} Standby time</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-12 col-md-6 review-text pt-5">-->
+<!--              <div>-->
+<!--                <img src="../../../../assets/product Detail Specification/description-mobile-screensize-display.svg"-->
+<!--                     alt="" class="review-img-size">-->
+<!--                <h6 class="text-centered">-->
+<!--                  <span>{{product.keyFeatures[3].value}}</span>-->
+<!--                </h6>-->
+
+<!--              </div>-->
+<!--              <p class="p-bold"><b>{{product.keyFeatures[4].value}}</b></p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+        <div class="row">
+          <div class="col-12">
+            <h3><b>Other Features</b></h3>
+          </div>
+
+        </div>
+
+<!--        <div class="row">-->
+<!--          <div class="col-12">-->
+<!--            <ul class="column2">-->
+<!--              <li *ngFor="let otherf of product.otherFeatures">{{otherf}}</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--          <p>-->
+<!--            {{product.longDescription}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--          <div class="col-xs-12 col-md-6">-->
+<!--            <p><b>-->
+<!--            <h3>Additional Specs</h3>-->
+<!--            </b></p>-->
+<!--            <table>-->
+<!--              <tr *ngFor="let specs of product.additionalSpecifications">-->
+<!--                <div class="row">-->
+<!--                  <div class="col-6"><b>{{specs.label}}</b></div>-->
+<!--                  <div class="col-6">{{specs.value}}</div>-->
+<!--                </div>-->
+<!--              </tr>-->
+<!--            </table>-->
+<!--          </div>-->
+<!--          <div class="col-12 col-md-6">-->
+<!--            <p><b>-->
+<!--            <h3>What’s in the box</h3></b></p>-->
+<!--            <ul>-->
+<!--              <li *ngFor="let inbox of product.boxContents">{{inbox}}</li>-->
+<!--            </ul>-->
+<!--            <p>For WEA capability, see <a href="# "><b>T-mobile WEA</b></a></p>-->
+<!--            <p>For WEA capability, see <a href="# "><b>California Proposition 65 WARNING</b></a></p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+      </div>
+      <div id="reviews" class="container tab-pane fade"><br>
+
+        <div class="row">
+          <div class="col-10">
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:24px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:24px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:24px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:24px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:24px;"></i>
+            <span class="rating-clr">5</span>
+            <span>from 1 review</span>
+          </div>
+          <div class="col-2">
+            <a href="# "><b>Write a Review</b></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 review-size">
+            <p> 100% of reviewers recommend this product.</p>
+          </div>
+        </div>
+        <hr style="margin-top: 50px;">
+        <hr>
+        <div class="row">
+          <div class="col-10">
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:14px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:14px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:14px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:14px;"></i>
+            <i class="fa fa-star star-padding rating-clr" aria-hidden="true" style="font-size:14px;"></i>
+            <span>Excellent watch</span>
+            <h6>skullisland</h6>
+            <p> bought this watch two days ago and has alot wonderful features to it and very stylish. Also the watch
+              last a long time love it.</p>
+            <hr>
+            <div class="row">
+              <hr>
+              <div class="col-8">
+                <p>Written by a customer while visiting Samsung.com</p>
+              </div>
+              <div class="col-4">
+                <img src="assets/samsung.png" alt="samsung logo">
+              </div>
+              <hr>
+
+
+            </div>
+
+
+            <hr>
+
+          </div>
+
+          <div class="col-2">
+            <span>October 21, 2019</span>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <p class="para-font">Device information provided by the manufacturer.</p>
+        <p class="para-font"> Credit approval, deposit, qualifying service, and $10 SIM card, and, in stores & on
+          customer service calls, $20 assisted or upgrade support charge may be required. Equipment Installment Plan:
+          Tax on full price due at sale. If you cancel
+          wireless service, remaining balance on device becomes due. Availability and amount of EIP financing subject to
+          credit approval. Down payment & unfinanced portion required at purchase. Balance paid in monthly installments.
+          Must remain
+          on qualifying service in good standing for duration of EIP agreement. Late/non-payment fees may apply.
+          Participating locations only. Examples shown reflect the down payment & monthly payments of our most
+          creditworthy customers; amounts
+          for others will vary.</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
