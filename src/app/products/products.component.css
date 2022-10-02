@@ -7,9 +7,6 @@
   color: #ffcc00;
   font-size: 15px;
 }
-.origin-amt{
-  text-decoration: line-through;
-}
 .box-shadow{
   transition: box-shadow .3s;
 }

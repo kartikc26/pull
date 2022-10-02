@@ -123,16 +123,31 @@
           <div class="navcart-wrap">
             <div class="navbar-minicart">
               <a class="minicart-link" href="#">
-                <span class="minicart-icon"><i class="fa fa-shopping-cart"></i><span>(0)</span></span>
+                <span class="minicart-icon"><i class="fa fa-shopping-cart"></i><span>{{cart.length}}</span></span>
               </a>
               <div class="mega_drop_menu mega_dropdown_nav_cart_v1">
                 <div class="menu-menu">
-                  <ul class="block_level2">
+                  <ul class="block_level2" *ngIf="cart.length == 0">
                     <li class="level-02 contact">Your shopping bag is empty.</li>
                     <li class="level-02">
                       <div class="minicart-actions clearfix">
-                        <a class="button" href="#">
-                          <span class="text">Go to the shop</span>
+                        <a class="button" routerLink="cart">
+                          <span class="text">Go to Cart</span>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="block_level2">
+                    <li class="level-02 contact" *ngFor="let product of products">
+                      <div>
+                        {{product.product_id}} <button class="float-right" (click)="removeFromCart(product.product_id)">X</button>
+                      </div>
+
+                    </li>
+                    <li class="level-02">
+                      <div class="minicart-actions clearfix">
+                        <a class="button"  routerLink="cart">
+                          <span class="text">Go to Cart</span>
                         </a>
                       </div>
                     </li>

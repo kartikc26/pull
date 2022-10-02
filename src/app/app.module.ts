@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorComponent } from './error/error.component';
 import { PipesModule} from "./core/pipes/pipes.module";
+import { CustomizeComponent } from './customize/customize.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PipesModule} from "./core/pipes/pipes.module";
     FooterComponent,
     ContactComponent,
     RegisterComponent,
-    ErrorComponent
+    ErrorComponent,
+    CustomizeComponent
   ],
   imports: [
     BrowserModule,

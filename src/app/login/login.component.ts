@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
         console.log(b);
         if(b==this.loginForm.value.password){
           localStorage.setItem('isUserLoggedIn','true');
+          localStorage.setItem('uid',this.loginForm.value.email)
           console.log(localStorage.getItem('isUserLoggedIn'));
           this.activeModal.close();
           window.location.reload()

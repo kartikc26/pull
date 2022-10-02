@@ -10,6 +10,7 @@ import { CartComponent } from './user/cart/cart.component';
 import { OrdersComponent } from './user/orders/orders.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import {ErrorComponent} from "./error/error.component";
+import {CustomizeComponent} from "./customize/customize.component";
 
 const routes: Routes = [
   {path: "", component:HomeComponent, pathMatch:"full"},
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path: "contact", component:ContactComponent},
   {path: "product", component:ProductDetailComponent},
   {path: "product/:category/:id", component:ProductDetailComponent},
+  {path: "customize", component:CustomizeComponent},
+  {path: "customize/:id", component:CustomizeComponent},
   {path: "boy", component:ProductsComponent, data: {productType: 'boy'}},
   {path: "girls", component:ProductsComponent, data: {productType: 'girls'}},
   {path: "brother", component:ProductsComponent, data: {productType: 'brother'}},
