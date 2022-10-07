@@ -1,17 +1,18 @@
-<div class="container-fluid p-0">
+<body class="container-fluid p-0">
   <header class="fix_heigh_header">
     <div class="nav_container">
       <div class="logo">
         <a href="">
-          <img alt="Logo" class="img_logo_defaul" src="assets/images/icon/logo.png"/>
-          <img alt="Logo" class="img_logo_fixed" src="assets/images/icon/logo-fixed.png"/>
+          <img alt="Logo" class="img_logo_defaul" src="assets/images/icon/logo.png" />
+          <img alt="Logo" class="img_logo_fixed" src="assets/images/icon/logo-fixed.png" />
         </a>
       </div>
-      <nav class="collapse navbar-collapse">
+      <nav class="collapse navbar-collapse" [ngClass]="navShow ? 'nav_showing' : ''">
         <ul class="menu">
           <li class="level-01 home"><a class="active" routerLink="">HOME</a></li>
-          <li class="level-01 shop"><a>GIFT FOR</a>
-            <div class="mega_drop_menu mega_dropdown_portfolio_v1">
+          <li class="level-01 shop"><a (click)="openGiftFor()">GIFT FOR <i class="fa fa-plus"
+                *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
+            <div class="mega_drop_menu mega_dropdown_portfolio_v1" [ngClass]="clickedGiftFor ? 'open' : ''">
               <!-- <div class="row">
                   <div class="col-lg-4">
                       <div class="menu-menu">
@@ -63,8 +64,9 @@
               </div>
             </div>
           </li>
-          <li class="level-01 portfolio"><a routerLink="">OCCASSION</a>
-            <div class="mega_drop_menu mega_dropdown_portfolio_v1">
+          <li class="level-01 portfolio"><a (click)="openOccassion()">OCCASSION <i class="fa fa-plus"
+            *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
+            <div class="mega_drop_menu mega_dropdown_portfolio_v1" [ngClass]="clickedOccassion ? 'open' : ''">
               <div class="menu-menu">
                 <ul class="block_level2">
                   <li class="level-02"><a routerLink="birthday">BIRTHDAY</a></li>
@@ -75,8 +77,9 @@
               </div>
             </div>
           </li>
-          <li class="level-01 blog"><a href="">CATEGORIES</a>
-            <div class="mega_drop_menu mega_dropdown_blog_v1">
+          <li class="level-01 blog"><a (click)="openCategory()">CATEGORIES <i class="fa fa-plus"
+            *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
+            <div class="mega_drop_menu mega_dropdown_blog_v1" [ngClass]="clickedCategory ? 'open' : ''">
               <div class="menu-menu">
                 <ul class="block_level2">
                   <li class="level-02"><a routerLink="blog_grid.html">Blog Default</a></li>
@@ -137,16 +140,17 @@
                       </div>
                     </li>
                   </ul>
-                  <ul class="block_level2">
-                    <li class="level-02 contact" *ngFor="let product of products">
+                  <ul class="block_level2" *ngIf="cart.length != 0">
+                    <li class="level-02 contact" *ngFor="let item of cart">
                       <div>
-                        {{product.product_id}} <button class="float-right" (click)="removeFromCart(product.product_id)">X</button>
+                        {{productsUtil.getName(item.product_id, products)}} <button class="float-right"
+                          (click)="removeFromCart(item.timesta, item.images)">X</button>
                       </div>
 
                     </li>
                     <li class="level-02">
                       <div class="minicart-actions clearfix">
-                        <a class="button"  routerLink="cart">
+                        <a class="button" routerLink="cart">
                           <span class="text">Go to Cart</span>
                         </a>
                       </div>
@@ -166,6 +170,7 @@
               <div class="mega_drop_menu mega_dropdown_nav_cart_v1">
                 <div class="menu-menu">
                   <ul class="block_level2">
+                    <li class="level-02 account-head">{{userData.name}}
                     <li class="level-02"><a routerLink="account">My Account</a>
                     <li class="level-02"><a routerLink="wishlist">Wishlist</a>
                     <li class="level-02"><a routerLink="orders">Orders</a>
@@ -195,45 +200,47 @@
 
       </div>
     </div>
-<!--    <div class="header-search-overlay hide">-->
-<!--      <div class="container-fluid">-->
-<!--        <div class="header-search-overlay-wrap">-->
-<!--          <form method="GET" class="searchform">-->
-<!--            <input type="search" class="searchinput" name="s" autocomplete="off" value="" placeholder="Search...">-->
-<!--            <input type="submit" class="searchsubmit hidden" name="submit" value="Search">-->
-<!--            <input type="hidden" name="post_type" value="product">-->
-<!--          </form>-->
-<!--          <button type="button" class="close">-->
-<!--            <span aria-hidden="true" class="fa fa-times"></span><span class="sr-only">Close</span>-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="handle" [ngClass]="handleShow ? 'handle_showing' : ''"><i class="fa fa-bars" aria-hidden="true"
+        (click)="toggleClass()"></i></div>
+    <!--    <div class="header-search-overlay hide">-->
+    <!--      <div class="container-fluid">-->
+    <!--        <div class="header-search-overlay-wrap">-->
+    <!--          <form method="GET" class="searchform">-->
+    <!--            <input type="search" class="searchinput" name="s" autocomplete="off" value="" placeholder="Search...">-->
+    <!--            <input type="submit" class="searchsubmit hidden" name="submit" value="Search">-->
+    <!--            <input type="hidden" name="post_type" value="product">-->
+    <!--          </form>-->
+    <!--          <button type="button" class="close">-->
+    <!--            <span aria-hidden="true" class="fa fa-times"></span><span class="sr-only">Close</span>-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
 
-<!--    <nav class="navbar nav_container nav-mini">-->
-<!--      <div class="row">-->
-<!--        <div class="col-1">-->
-<!--        <button class="navbar-toggler float-left" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">-->
-<!--          <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        </div>-->
-<!--        <div class="col-7">-->
-<!--          <a href="">-->
-<!--            <img alt="Logo" class="img_logo_defaul" src="assets/images/icon/logo.png"/>-->
-<!--            <img alt="Logo" class="img_logo_fixed" src="assets/images/icon/logo-fixed.png"/>-->
-<!--          </a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="collapse navbar-collapse" id="collapsibleNavbar">-->
-<!--        <div class="row text-center text-white">-->
-<!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "">Home</a></div>-->
-<!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "features">Features</a></div>-->
-<!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "products">Products</a></div>-->
-<!--          &lt;!&ndash; <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "services">Services</a></div> &ndash;&gt;-->
-<!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "technology">Technology</a></div>-->
-<!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "contact">Contact&nbsp;Us</a></div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </nav>-->
+    <!--    <nav class="navbar nav_container nav-mini">-->
+    <!--      <div class="row">-->
+    <!--        <div class="col-1">-->
+    <!--        <button class="navbar-toggler float-left" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">-->
+    <!--          <span class="navbar-toggler-icon"></span>-->
+    <!--        </button>-->
+    <!--        </div>-->
+    <!--        <div class="col-7">-->
+    <!--          <a href="">-->
+    <!--            <img alt="Logo" class="img_logo_defaul" src="assets/images/icon/logo.png"/>-->
+    <!--            <img alt="Logo" class="img_logo_fixed" src="assets/images/icon/logo-fixed.png"/>-->
+    <!--          </a>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--      <div class="collapse navbar-collapse" id="collapsibleNavbar">-->
+    <!--        <div class="row text-center text-white">-->
+    <!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "">Home</a></div>-->
+    <!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "features">Features</a></div>-->
+    <!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "products">Products</a></div>-->
+    <!--          &lt;!&ndash; <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "services">Services</a></div> &ndash;&gt;-->
+    <!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "technology">Technology</a></div>-->
+    <!--          <div class="nav-item col-4" data-toggle="collapse" data-target=".navbar-collapse.show"><a routerLink = "contact">Contact&nbsp;Us</a></div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </nav>-->
   </header>
-</div>
+</body>

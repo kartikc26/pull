@@ -33,16 +33,20 @@ export class RegisterComponent implements OnInit {
 
   createForm() {
     this.registerForm = this.fb.group({
-      name: ['', Validators.required ],
-      phone: ['', Validators.required ],
       email: ['', [Validators.required, Validators.email] ],
-      password: ['',[Validators.required, Validators.minLength(6)]]
+      password: ['',[Validators.required, Validators.minLength(6)]],
+      password2: ['',[Validators.required, Validators.minLength(6)]]
     });
   }
 
   onSubmit(){
     console.log(this.registerForm.value.email)
     console.log(this.registerForm.value.password)
+    if(this.registerForm.value.password != this.registerForm.value.password2){
+      this.errorMessage = 'Both passwords should match'
+      this.registerForm.invalid
+      return
+    }
     this.registerForm.value.password=CryptoJS.AES.encrypt(this.registerForm.value.password, environment.cryptKey.toString()).toString()
     console.log(this.registerForm.value.password)
     this.dataService.register(this.registerForm.value).subscribe(data =>{

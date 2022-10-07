@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Promise<boolean>{
     return new Promise((resolve, reject) => {
-      if(localStorage.getItem('isUserLoggedIn')){
+      if(localStorage.getItem('isUserLoggedIn')=="true"){
         return resolve(true);
       } 
       console.log('not logg in')

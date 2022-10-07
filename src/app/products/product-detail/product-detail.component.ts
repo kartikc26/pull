@@ -4,6 +4,7 @@ import {DataService} from "../../core/service/data.service";
 import {Product} from "../../model/product";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CustomizeComponent} from "../../customize/customize.component";
+import { ProductService } from 'src/app/core/service/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
               private dataService: DataService,
+              private productService: ProductService,
               private modal: NgbModal,
               private router: Router) {  }
 
@@ -36,11 +38,11 @@ export class ProductDetailComponent implements OnInit {
 
 
 
-    this.dataService.getProductData(this.prodId).subscribe(products=>{
+    this.productService.getProductData(this.prodId).subscribe(products=>{
       console.log(products)
       this.prod=products
-      this.dataService.prodImageCount=products[0].noi
-      this.dataService.prodTextCount=products[0].not
+      this.productService.prodImageCount=products[0].noi
+      this.productService.prodTextCount=products[0].not
     })
   }
 

@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from '../login/login.component';
 import { idText } from 'typescript';
+import { CartService } from '../core/service/cart.service';
 // import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -25,12 +26,17 @@ export class CustomizeComponent implements OnInit {
   // data:any;
 
   selectedFiles!: FileList;
+  selectedText:string[] =[]
+  finalText:string=''
   filesUploaded=false;
+  textSaved=false;
   progressInfos:any;
   message = '';
+  textMessage = '';
   fileInfos!: Observable<any>;
   pid!:string
   size:number =0
+  timestaMilli:number=0
   uploadPath:string = 'images/' + localStorage.getItem('uid') + '/cart/'
 
   constructor(private route:ActivatedRoute,
@@ -38,12 +44,12 @@ export class CustomizeComponent implements OnInit {
               private http: HttpClient,
               private router: Router,
               private fb: FormBuilder,
-              private dataService: DataService) {
-    // this.createForm();
-    // console.log(this.customizeForm)
+              private dataService: DataService,
+              private cartService: CartService) {
+
 
   }
-  //
+  
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(params =>{
@@ -52,61 +58,47 @@ export class CustomizeComponent implements OnInit {
       this.pid=params.id
       this.size=params.size
 
-      })
+    })
+    console.log(Date.now())
 
 
-  //   console.log(this.dataService.prodImageCount+","+this.dataService.prodTextCount)
-  //   this.createForm()
-  //
-  //   for (let i = 0; i < this.dataService.prodImageCount; i++) {
-  //     this.im.push(this.fb.group({
-  //       file: [null, Validators.required]
-  //     }));
-  //   }
-  //
-  //   for (let i = 0; i < this.dataService.prodTextCount; i++) {
-  //     this.te.push(this.fb.group({
-  //       text: ['', Validators.required]
-  //     }));
-  //   }
-  //
   }
-  //
-  // get f() { return this.customizeForm.controls; }
-  // get im() {return this.f.images as FormArray; }
-  // get te() {return this.f.texts as FormArray; }
-  //
-  // createForm() {
-  //   this.customizeForm = this.fb.group({
-  //     images: new FormArray([]),
-  //     texts: new FormArray([])
-  //   });
-  // }
-  //
-  // onFileChange(event:any) {
-  //   if (event.target.files.length > 0) {
-  //     const file = event.target.files[0];
-  //     console.log(file)
-  //   }
-  // }
-  //
-  // onSubmit(){
-  //   console.log(this.customizeForm.value)
-  // }
 
-
+  counter() {
+    return new Array(parseInt(<string>localStorage.getItem("prodTextCount")));
+  }
 
   selectFiles(event:any) {
     this.progressInfos = [];
     this.selectedFiles = event.target.files;
   }
+
+  textChanged($event:any){
+    this.finalText=''
+    this.textSaved=false
+    this.textMessage='Please save texts'
+  }
+
+  saveText(){
+    this.finalText= this.selectedText.join("~")
+    console.log(this.finalText.length)
+
+    if(this.finalText.length < 2){
+      window.alert('Texts cannot be empty')
+      return
+    }
+    this.textMessage = 'Text saved successfully'
+    this.textSaved=true
+  }
+
   async uploadFiles() {
     //clearing directory to remove older images
     this.message=""
     let dirClear:boolean = true;
     this.filesUploaded=false;
+    this.timestaMilli = Date.now()
     
-    this.uploadPath = this.uploadPath + this.pid + '/'
+    this.uploadPath = this.uploadPath + this.pid + '/' + this.timestaMilli + "/"
     console.log(this.uploadPath)
     
     let noi = parseInt(<string>localStorage.getItem("prodImageCount"));
@@ -140,33 +132,20 @@ export class CustomizeComponent implements OnInit {
     this.progressInfos[idx] = { value: 0, fileName: file.name };
     
     this.dataService.upload(file, idx, this.uploadPath).then(()=>{this.message='Uploaded Successfully'; this.filesUploaded=true;}  ).catch(()=> this.message='Upload error, please retry!')
-    // subscribe(
-    //   event => {
-    //     // console.log(event)
-    //     // if (event.type === HttpEventType.UploadProgress) {
-    //     // } else if (event instanceof HttpResponse) {
-    //     //   // this.fileInfos = this.uploadService.getFiles();
-    //     // }
-    //     // window.alert("Uploaded successfully")
-    //     this.message = 'Uploaded Successfully';
-    //   },
-    //   err => {
-    //     // this.progressInfos[idx].value = 0;
-    //     // this.message = 'Error uploading files!';
-    //     window.alert("Upload Error, please retry!");
-    //   });
+
   }
 
   addtocart(){
-    let data = {'email': localStorage.getItem("uid"),
+    let data = {'timesta': this.timestaMilli,
+                'email': localStorage.getItem("uid"),
                 'pid': this.pid,
                 'size': this.size,
                 'images': this.uploadPath,
-                'texts': ''}
+                'texts': this.finalText}
     console.log(data)
 
     this.dataService.validateUser(data).then(res=>{
-      this.dataService.addToCart(data)
+      this.cartService.addToCart(data)
       .then(()=>{
         console.log('added')
         window.alert('Product added to cart !')
@@ -179,11 +158,6 @@ export class CustomizeComponent implements OnInit {
       window.alert('Please login to continue !')
       const modalRef = this.modal.open(LoginComponent);
     })
-
-    
-
-
-
   }
 
 }

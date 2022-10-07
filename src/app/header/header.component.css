@@ -21,3 +21,11 @@
     padding-top: 12px;
 }
 
+.open{
+    display: block !important;
+}
+.account-head{
+    font-size: 13px;
+    font-family: "Montserrat";
+    text-decoration: bold;
+}

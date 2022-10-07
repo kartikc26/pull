@@ -1,1 +1,84 @@
-<p>wishlist works!</p>
+<div class="container">
+    <div class="row ">
+        <div class="col-12 col-md-7-shopping-cart">
+            <div class="your_shopping_cart shopping_default">
+                <h2 class="title title_default">your wishlist</h2>
+                <div class="cart-form">
+                    <div class="table-responsive">
+                        <table class="table cart-table text-center">
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Products</th>
+                                    <th class=""></th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of products">
+                                    <td class="product-name">
+                                        <a [routerLink]="['/product']" [queryParams]="{id:product.product_id}">
+                                            <img src="assets/images/product/shopping_cart1.jpg" alt="" >
+                                        </a>
+                                    </td>
+                                    <td class="pro_name">
+                                        <a [routerLink]="['/product']" [queryParams]="{id:product.product_id}">
+                                            <span>{{product.product_name}}</span><br>
+                                            <span>Size: {{product.size.split('~')[0]}}</span><br>
+                                            <span>Weight: {{product.weight.split('~')[0]}} Kg</span>
+                                        </a>
+                                    </td>
+                                    <td class="product-price">
+                                        <!-- <p class="origin-amt">{{product.price.split('~')[0]}}</p>
+                                        <span>{{product.discount}}% off</span>
+                                        <p class="price">{{product.price.split('~')[0] | discPrice: product.discount }}</p> -->
+                                        <div>
+                                            <table class="text-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Size</th>
+                                                        <th>Weight</th>
+                                                        <th>Price</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let item of product.size.split('~'); let i=index">
+                                                        <td>{{item}}</td>
+                                                        <td>{{product.weight.split('~')[i]}}Kg</td>
+                                                        <td>{{product.price.split('~')[i] | currency:'INR'}}</td>
+                                                    </tr>
+                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </td>
+                                    <td class="product-remove">
+                                        <button class="" (click)="deleteWishlist(product.product_id)">Delete</button>
+                                    </td>
+                                    <!-- <td>
+                                    <div class="quantity_product quantity_product_15 size_product">
+                                        <form enctype="multipart/form-data">
+                                            <div class="product-signle-options product_15 clearfix">
+                                                <div class="selector-wrapper size">
+                                                    <div class="quantity_shop_cart">
+                                                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </td> -->
+                                    <!-- <td class="product-subtotal">
+                                    <p class="price">$72.20</p>
+                                </td> -->
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

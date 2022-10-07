@@ -1,0 +1,29 @@
+<div class="cart_total shopping_default">
+    <h2 class="title title_default">cart totals</h2>
+    <div class="content_cart_total">
+        <p class="cart_subtotal">
+            <span class="text">Cart Subtotal</span>
+            <span class="number">{{subtotal | currency:'INR'}}</span>
+        </p>
+        <p class="shipping_free">
+            <span class="text">Shipping</span>
+            <span class="number" *ngIf="shipping == 0">Free Shipping</span>
+            <span class="number" *ngIf="shipping != 0">{{shipping | currency:'INR'}}</span>
+        </p>
+        <p class="cart_subtotal" *ngIf="newUserDiscount != 0">
+            <span class="text">New User Discount</span>
+            <span class="number" >-{{newUserDiscount | currency:'INR'}}</span>
+        </p>
+        <p class="cart_subtotal" *ngIf="couponDiscount != 0">
+            <span class="text">Coupon Discount</span>
+            <span class="number">-{{couponDiscount | currency:'INR'}}</span>
+        </p>
+        <p class="totals">
+            <span class="text">Totals</span>
+            <span class="number">{{total | currency:'INR'}}</span>
+        </p>
+    </div>
+    <div class="submit_cart_total">
+        <button type="submit" class="proceed_to_checkout btn btn-default" (click)="checkout()">proceed to payment</button>
+    </div> 
+</div>

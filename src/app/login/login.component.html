@@ -1,8 +1,8 @@
-<div class="modal-header p-5">
+<!-- <div class="modal-header p-5">
     <h4 class="modal-title">Login </h4>
-    <!-- <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
       <span aria-hidden="false">&times;</span>
-    </button> -->
+    </button>
 </div>
 <div class="modal-body">
     <div class="row">
@@ -31,4 +31,59 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-primary" (click)="register()">Register</button>
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div> -->
+
+<div class="container-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrap_login">
+                    <div class="tab-v8">
+                        <div class="nav-inner header_featured_pr wow fadeInUp">
+                            <span class="login_register">Login</span>
+                        </div>
+                        <div class="">
+                            <h3>Login to your account</h3>
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <label>Email address</label>
+                                    <input type="email" formControlName="email" class="form-control">
+                                    <div *ngIf="(f.email.invalid && f.email.touched) || f.email.dirty">
+                                        <small class="text-danger" *ngIf="f.email.errors?.required">Email address is required</small>
+                                        <small class="text-danger" *ngIf="f.email.errors?.email">Email address is invalid</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" formControlName="password">
+                                    <div *ngIf="(f.password.invalid && f.password.touched) || f.password.dirty">
+                                        <small class="text-danger" *ngIf="f.password.errors?.required">Password is required</small>
+                                    </div>
+                                </div>
+                                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-login">Login</button>
+                            </form>
+
+                            <button type="button" class="btn btn-secondary" (click)="register()">Register</button>
+                            
+                            <!-- <h3 class="login_with_social">LOGIN WITH YOUR SOCIAL</h3>
+                            <ul class="your_social">
+                                <li class=""><a href="" class=""><span aria-hidden="true"
+                                            class="social_twitter"></span><span class="text_social">twitter</span></a>
+                                </li>
+                                <li class=""><a href="" class=""><span aria-hidden="true"
+                                            class="social_facebook"></span><span class="text_social">facebook</span></a>
+                                </li>
+                                <li class=""><a href="" class=""><span aria-hidden="true"
+                                            class="social_pinterest"></span><span
+                                            class="text_social">pinterest</span></a></li>
+                                <li class=""><a href="" class=""><span aria-hidden="true"
+                                            class="social_dribbble"></span><span class="text_social">dribbble</span></a>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

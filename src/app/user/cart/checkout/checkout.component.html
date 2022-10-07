@@ -1,0 +1,156 @@
+<p>checkout works!</p>
+i am checkout
+<div class="container-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="check_out_left default_check_out">
+                    <div class="billing-fields billing-fields-1">
+                        <h2>Billing details</h2>
+                        <div class="input-field">
+                            <label>Country <span class="start_checkout">*</span></label>
+                            <div class="selectbox">
+                                <select name="country">
+                                    <option value="vietnam">Vietnam</option>
+                                    <option value="US">US</option>
+                                </select>
+                            </div>
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label>First name <span class="start_checkout">*</span></label>
+                            <input name="first-name" type="text" placeholder="First name" class="input-text" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label>Last name <span class="start_checkout">*</span></label>
+                            <input type="text" name="last-name" placeholder="Last name" class="input-text" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label for="company-name">Company name</label>
+                            <input type="text" name="company" placeholder="Company name" class="input-text" id="company-name">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label for="address">Address <span class="start_checkout">*</span></label>
+                            <input type="text" name="address" placeholder="Street address" class="input-text" id="address" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label>Town / City <span class="start_checkout">*</span></label>
+                            <input type="text" name="town" class="input-text" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label for="email">Email<span class="start_checkout">*</span></label>
+                            <input name="email" type="text" class="input-text" id="email" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="input-field">
+                            <label for="phone">Phone<span class="start_checkout">*</span></label>
+                            <input type="text" name="phone" class="input-text" id="phone" required="">
+                        </div><!-- .input-field -->
+
+                        <div class="checkbox checkbox_acount deffirent_address">
+                            <input type="checkbox" value="yes" name="ship_address" id="ship_address">
+                            <label for="ship_address">Ship to a Different address?</label>
+                        </div>
+                        <div class="ship_diferent">
+                            <div class="input-field">
+                                <label>Country <span class="start_checkout">*</span></label>
+                                <div class="selectbox">
+                                    <select name="country">
+                                        <option value="vietnam">Vietnam</option>
+                                        <option value="US">US</option>
+                                    </select>
+                                </div>
+                            </div><!-- .input-field -->
+
+                            <div class="input-field">
+                                <label>First name <span class="start_checkout">*</span></label>
+                                <input name="first-name" type="text" placeholder="First name" class="input-text" required="">
+                            </div><!-- .input-field -->
+
+                            <div class="input-field">
+                                <label>Last name <span class="start_checkout">*</span></label>
+                                <input type="text" name="last-name" placeholder="Last name" class="input-text" required="">
+                            </div><!-- .input-field -->
+
+                            <div class="input-field">
+                                <label for="company-name">Company name</label>
+                                <input type="text" name="company" placeholder="Company name" class="input-text">
+                            </div><!-- .input-field -->
+
+                            <div class="input-field">
+                                <label>Town / City <span class="start_checkout">*</span></label>
+                                <input type="text" name="town" class="input-text" required="">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="note1">Order note</label>
+                                <textarea rows="10" cols="40" name="note1" id="note1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="check_out_right default_check_out">
+                    <div class="billing-fields">
+                        <h2>Your order</h2>
+                        <div class="your_order">
+                            <div class="input-field product_buy">
+                                <label><span class="country2">Products</span><span class="totals">TOTALS</span></label>
+                                <p><a href=""> <span class="navy">Slim Collarless Blaze</span></a><span class="price_navy">$75.20</span></p>
+                                <p><a href=""><span class="navy">Denim Kimono Jacket</span></a> <span class="price_navy">$75.20</span></p>
+                                <p class="cart_subtotal"><a href=""><span class="navy">Cart Subtotal</span></a> <span class="price_navy">$35.00</span></p>
+                            </div>
+                            <div class="input-field">
+                                <label class="title_order_totals"><span class="order_total">Order Totals :</span><span class="price_order_total">$105.00</span></label>
+                            </div>
+                            <div class="payment_methods">
+                                <ul>
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="radio" checked="checked" value="cheque" name="payment_method" id="direct">
+                                            <label for="direct">DIRECT BANK TRANSFER</label>
+                                        </div>
+                                        <div class="payment-box">
+                                            <p>Donec sed odio dui. Nulla vitae elit libero, a phara etra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="radio" value="cheque" name="payment_method" id="payment_method">
+                                            <label for="payment_method">CHEQUE PAYMENT</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="radio" value="cheque" name="payment_method" id="selivery_method">
+                                            <label for="selivery_method">CASH ON DELIVERY</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="radio" value="cheque" name="payment_method" id="paypal_method">
+                                            <label for="paypal_method">PAYPAL</label>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="place_order">
+                            <a href="" class="link_place_order">Place ORder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

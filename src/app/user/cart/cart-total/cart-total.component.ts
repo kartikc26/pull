@@ -1,21 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from 'src/app/core/service/cart.service';
-import { DataService } from 'src/app/core/service/data.service';
 import { ProductService } from 'src/app/core/service/product.service';
 import { Cart } from 'src/app/model/cart';
 import { Product } from 'src/app/model/product';
 import { ProductUtil } from 'src/app/util/ProductsUtil';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-cart-total',
+  templateUrl: './cart-total.component.html',
+  styleUrls: ['./cart-total.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartTotalComponent implements OnInit {
 
-  isLogIn: boolean = false
   cart: Cart[] = []
   products: Product[] = []
   subtotal: number = 0
@@ -23,22 +20,13 @@ export class CartComponent implements OnInit {
   newUserDiscount: number = 0
   couponDiscount: number = 0
   total: number = 0
-  productsUtil:ProductUtil = new ProductUtil();
 
-  constructor(private modal: NgbModal,
-    private cartService: CartService,
+  constructor(private cartService: CartService,
     private productService: ProductService,
     private router: Router) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
     let ids = ''
-    console.log(localStorage.getItem("isUserLoggedIn"))
-    // @ts-ignore
-    if (localStorage.getItem('isUserLoggedIn') && localStorage.getItem('isUserLoggedIn').toString() == "true") {
-      this.isLogIn = true;
-    }
-
     this.cartService.fetchCart().toPromise().then((res: any) => {
       if (res != 'No Data') {
         this.cart = res
@@ -60,16 +48,15 @@ export class CartComponent implements OnInit {
           this.total=this.cartService.getCartTotal()
         }).catch(err => console.log('error:' + err))
     })
+    
+
+
 
   }
 
-  removeFromCart(timesta:string, path:string){
-    console.log('delete: '+timesta)
-    this.cartService.deleteFromCart(timesta,path).then(res=>{
-      console.log('deleted: '+timesta)
-      window.location.reload()
-    }
-      ).catch(err=>console.log('error deleting'))
+
+  checkout(){
+    this.router.navigate(['checkout'])
   }
 
 }

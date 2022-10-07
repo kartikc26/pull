@@ -1,18 +1,18 @@
 export interface Product{
-  product_id:String
-  product_name:String
-  price:String
+  product_id:string
+  product_name:string
+  price:string
   discount:number
-  weight:String
-  size:String
-  image:String
-  description:String
-  highlights:String
+  weight:string
+  size:string
+  image:string
+  description:string
+  highlights:string
   noi:number
   not:number
-  ideal_for:String
-  tags:String
-  type:String
+  ideal_for:string
+  tags:string
+  type:string
   quantity:number
-  recommendations:String
+  recommendations:string
 }

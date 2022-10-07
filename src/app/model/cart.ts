@@ -5,6 +5,6 @@ export interface Cart{
     product_size:string
     images:string
     texts:string
-    timestamp:string
+    timesta:string
   }
   

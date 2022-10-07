@@ -4,6 +4,10 @@ import { LoginComponent } from '../login/login.component';
 import {DataService} from "../core/service/data.service";
 import {Product} from "../model/product";
 import { Cart } from '../model/cart';
+import { User } from '../model/user';
+import { ProductUtil } from '../util/ProductsUtil';
+import { CartService } from '../core/service/cart.service';
+import { ProductService } from '../core/service/product.service';
 
 @Component({
   selector: 'app-header',
@@ -13,16 +17,31 @@ import { Cart } from '../model/cart';
 export class HeaderComponent implements OnInit {
 
   isLogIn=false;
+  loginClicked:boolean=false;
   cart:Cart[]=[]
   products:Product[]=[]
+  userData!:User
+  navShow:boolean=false
+  handleShow:boolean=false
+  clickedGiftFor:boolean=false
+  clickedCategory:boolean=false
+  clickedOccassion:boolean=false
+  productsUtil:ProductUtil = new ProductUtil();
   constructor(private modal: NgbModal,
-              private dataService: DataService) { }
+              private dataService: DataService,
+              private cartService: CartService,
+              private productService: ProductService) { }
 
   ngOnInit(): void {
     console.log(localStorage.getItem("isUserLoggedIn"))
+    console.log(localStorage.getItem("uid"))
     // @ts-ignore
     if(localStorage.getItem('isUserLoggedIn') && localStorage.getItem('isUserLoggedIn').toString() == "true"){
       this.isLogIn=true;
+      this.dataService.getUserData(localStorage.getItem('uid')).then((res:User[])=>{
+        this.userData=res[0]
+        console.log(this.userData)
+      }).catch(err=>console.log(err))
     }
 
     // this.dataService.fetchCart()
@@ -42,12 +61,14 @@ export class HeaderComponent implements OnInit {
 
     // }).catch(err=>{console.log(err)})
 
-    this.dataService.fetchCart().subscribe((res:any) =>{
+    this.cartService.fetchCart().subscribe((res:any) =>{
       console.log(res)
-      this.cart = res
-      // console.log(this.cart)
+      if(res!='No Data'){
+        this.cart = res
+      }
+      console.log(this.cart)
       this.cart.forEach(item =>{
-        this.dataService.getProductData(item.product_id).toPromise()
+        this.productService.getProductData(item.product_id).toPromise()
         .then((res:Product[])=>{
           this.products.push(res[0])
           console.log(this.products)
@@ -63,6 +84,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
+    this.loginClicked = true
     const modalRef = this.modal.open(LoginComponent);
     // modalRef.componentInstance.name = 'World';
   }
@@ -74,8 +96,26 @@ export class HeaderComponent implements OnInit {
     window.location.reload()
   }
 
-  removeFromCart(pid:String){
-    console.log(pid)
-    this.dataService.deleteFromCart(pid)
+  removeFromCart(timesta:string, path:string){
+    console.log('delete: '+timesta)
+    this.cartService.deleteFromCart(timesta,path).then(res=>console.log('deleted: '+timesta)).catch(err=>console.log('error deleting'))
+  }
+
+  toggleClass(){
+    this.navShow = !this.navShow
+    this.handleShow = !this.handleShow
+
+  }
+
+  openGiftFor(){
+    this.clickedGiftFor = !this.clickedGiftFor
+  }
+
+  openOccassion(){
+    this.clickedOccassion = !this.clickedOccassion
+  }
+
+  openCategory(){
+    this.clickedCategory = !this.clickedCategory
   }
 }

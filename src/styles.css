@@ -3752,8 +3752,8 @@ tbody.collapse.in {
     .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
       border-bottom-color: #fff; } }
 
-.tab-content > .tab-pane {
-  display: none; }
+/* .tab-content > .tab-pane {
+  display: none; } */
 
 .tab-content > .active {
   display: block; }
@@ -6899,7 +6899,7 @@ button.close {
 
 /* tabs style 2 */
 .tab-v2 .tab-content {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 15px 20px;
   background: #f6f6f6; }
 
@@ -8040,8 +8040,8 @@ sup {
   border: 1px solid #cccccc;
   display: inline-block;
   width: 100%;
-  margin-top: 150px;
-  margin-bottom: 165px; }
+  margin-top: 50px;
+  margin-bottom: 65px; }
   .wrap_login .login_register {
     font: 700 20px "Montserrat";
     text-transform: uppercase;
@@ -8063,8 +8063,8 @@ sup {
         border-bottom: 1px solid #cccccc; }
         .wrap_login .login_register li.active a {
           color: #000000; }
-    .wrap_login .login_register .login {
-      float: left; }
+    /* .wrap_login .login_register .login {
+      float: left; } */
     .wrap_login .login_register .register {
       float: right; }
   .wrap_login .tab-content {
@@ -8155,8 +8155,8 @@ sup {
             color: #cc9900; }
         .wrap_login .tab-content .tab-pane .your_social li:last-child {
           padding-right: 0px; }
-          .wrap_login .tab-content .tab-pane .your_social li:last-child a:after {
-            display: none; }
+          /* .wrap_login .tab-content .tab-pane .your_social li:last-child a:after {
+            display: none; } */
 
 /** 6.1 Slider **/
 .fashion_lookbook {
@@ -12753,4 +12753,9 @@ body {
 
 .origin-amt{
   text-decoration: line-through;
+}
+
+.container{
+  font-size: 150%;
+  font-family: Montserrat;
 }

@@ -48,25 +48,11 @@ export class LoginComponent implements OnInit {
     // console.log(a)
     // let b=CryptoJS.AES.decrypt(a, environment.cryptKey.toString()).toString(CryptoJS.enc.Utf8);
     // console.log(b)
-    this.dataService.login(this.loginForm.value.email).subscribe(data =>{
-      this.data = data;
-      if(data){
-        let b=CryptoJS.AES.decrypt(data, environment.cryptKey.toString()).toString(CryptoJS.enc.Utf8);
-        console.log(data);
-        console.log(b);
-        if(b==this.loginForm.value.password){
-          localStorage.setItem('isUserLoggedIn','true');
-          localStorage.setItem('uid',this.loginForm.value.email)
-          console.log(localStorage.getItem('isUserLoggedIn'));
-          this.activeModal.close();
-          window.location.reload()
-        }else{
-          console.log('invalid pwd')
-        }
-      } else{
-        console.error("cannot login")
-        localStorage.setItem('isUserLoggedIn','false');
-      }
+    this.dataService.login({'email':this.loginForm.value.email,'pwd':this.loginForm.value.password}).then(res=>{
+      this.activeModal.close()
+      window.location.reload()
+    }).catch(err=>{
+      window.alert("Couldnt login, please retry")
     })
   }
 

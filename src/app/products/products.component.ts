@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../core/service/data.service";
+import { ProductService } from '../core/service/product.service';
 import {Product} from "../model/product";
 
 @Component({
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
   prod:Product[] |undefined
   prodType:any |undefined
   constructor(private route: ActivatedRoute,
-              private dataService: DataService,
+              private productService: ProductService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -22,7 +23,7 @@ export class ProductsComponent implements OnInit {
       this.prodType=data.productType
       }
     )
-    this.dataService.getProducts(this.prodType).subscribe(products=>{
+    this.productService.getProducts(this.prodType).subscribe(products=>{
       console.log(products)
       this.prod=products
 

@@ -1,1 +1,33 @@
 <p>account works!</p>
+<div class="container">
+    <div>
+        <h2>Hello, {{userData.name}}</h2>
+    </div>
+<div class="row">
+<div class="col-2 border mr-2">
+<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link active" id="v-pills-myprofile-tab" data-toggle="pill" href="#v-pills-myprofile" role="tab"
+        aria-controls="v-pills-myprofile" aria-selected="true">My Profile</a>
+    <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab"
+        aria-controls="v-pills-orders" aria-selected="false">Orders</a>
+    <a class="nav-link" id="v-pills-addresses-tab" data-toggle="pill" href="#v-pills-addresses" role="tab"
+        aria-controls="v-pills-addresses" aria-selected="false">Addresses</a>
+    <a class="nav-link" id="v-pills-coupons-tab" data-toggle="pill" href="#v-pills-coupons" role="tab"
+        aria-controls="v-pills-coupons" aria-selected="false">Coupons</a>
+    <a class="nav-link" id="v-pills-review-tab" data-toggle="pill" href="#v-pills-review" role="tab"
+        aria-controls="v-pills-review" aria-selected="false">Reviews</a>
+    <a class="nav-link" href="wishlist" aria-selected="false">Wishlist</a>
+    <button class="" (click)="logout()" >Logout</button>
+</div>
+</div>
+<div class="col-9 border">
+<div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-myprofile" role="tabpanel" aria-labelledby="v-pills-myprofile-tab">My Profile</div>
+    <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">My Orders</div>
+    <div class="tab-pane fade" id="v-pills-addresses" role="tabpanel" aria-labelledby="v-pills-addresses-tab">Address</div>
+    <div class="tab-pane fade" id="v-pills-coupons" role="tabpanel" aria-labelledby="v-pills-coupons-tab">Coupons</div>
+    <div class="tab-pane fade" id="v-pills-review" role="tabpanel" aria-labelledby="v-pills-review-tab">Review</div>
+</div>
+</div>
+</div>
+</div>

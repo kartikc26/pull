@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
@@ -22,6 +23,8 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorComponent } from './error/error.component';
 import { PipesModule} from "./core/pipes/pipes.module";
 import { CustomizeComponent } from './customize/customize.component';
+import { CheckoutComponent } from './user/cart/checkout/checkout.component';
+import { CartTotalComponent } from './user/cart/cart-total/cart-total.component';
 
 
 @NgModule({
@@ -40,13 +43,16 @@ import { CustomizeComponent } from './customize/customize.component';
     ContactComponent,
     RegisterComponent,
     ErrorComponent,
-    CustomizeComponent
+    CustomizeComponent,
+    CheckoutComponent,
+    CartTotalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     NgbModule,
     PipesModule
   ],
