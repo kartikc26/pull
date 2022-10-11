@@ -1,3 +1,4 @@
+import { Cart } from "../model/cart"
 import { Product } from "../model/product"
 
 
@@ -17,6 +18,10 @@ export class ProductUtil {
 
   getPrice(id: string, size: string, products: Product[]) {
     return products.filter(i => { return i.product_id == id })[0].price.split("~")[parseInt(<string>size)]
+  }
+
+  getPriceFromCart(id: string, cart: Cart[], products: Product[]) {
+    return products.filter(i => { return i.product_id == id })[0].price.split("~")[parseInt(<string>cart.filter(i => { return i.product_id == id })[0].product_size)]
   }
 
   getDiscount(id: string, products: Product[]) {

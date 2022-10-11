@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
     private dataService: DataService,
     public activeModal: NgbActiveModal) {
       this.createForm();
-      console.log(this.registerForm)
     
   }
 

@@ -1,0 +1,13 @@
+.topcorner{
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    
+}
+
+@media only screen and (max-width: 770px) {
+    .topcorner{
+        position: inherit;
+    }
+
+}

@@ -7,146 +7,137 @@ i am checkout
                 <div class="check_out_left default_check_out">
                     <div class="billing-fields billing-fields-1">
                         <h2>Billing details</h2>
-                        <div class="input-field">
-                            <label>Country <span class="start_checkout">*</span></label>
-                            <div class="selectbox">
-                                <select name="country">
-                                    <option value="vietnam">Vietnam</option>
-                                    <option value="US">US</option>
-                                </select>
-                            </div>
-                        </div><!-- .input-field -->
+                        <button class="btn btn-dark" (click)="addNewAddress()">Add New Address</button>
+                        <div *ngIf="addAddress">
+                            <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+                                <div class="input-field">
+                                    <label>Full Name <span class="start_checkout">*</span></label>
+                                    <input name="name" type="text" placeholder="Full Name"
+                                        class="input-text form-control" required formControlName="name">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label>First name <span class="start_checkout">*</span></label>
-                            <input name="first-name" type="text" placeholder="First name" class="input-text" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Phone <span class="start_checkout">*</span></label>
+                                    <input name="phone" type="phone" placeholder="Phone" class="input-text form-control"
+                                        required formControlName="phone">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label>Last name <span class="start_checkout">*</span></label>
-                            <input type="text" name="last-name" placeholder="Last name" class="input-text" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Alternate Phone </label>
+                                    <input name="alternatePhone" type="phone" placeholder="Alternate Phone"
+                                        class="input-text form-control" formControlName="alternatePhone">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label for="company-name">Company name</label>
-                            <input type="text" name="company" placeholder="Company name" class="input-text" id="company-name">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Address Line 1 <span class="start_checkout">*</span></label>
+                                    <input name="line1" type="text" placeholder="Address Line 1"
+                                        class="input-text form-control" required formControlName="line1">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label for="address">Address <span class="start_checkout">*</span></label>
-                            <input type="text" name="address" placeholder="Street address" class="input-text" id="address" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Address Line 2 </label>
+                                    <input name="line2" type="text" placeholder="Address Line 2"
+                                        class="input-text form-control" formControlName="line2">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label>Town / City <span class="start_checkout">*</span></label>
-                            <input type="text" name="town" class="input-text" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Town / City <span class="start_checkout">*</span></label>
+                                    <input name="city" type="text" placeholder="City" class="input-text form-control"
+                                        required formControlName="city">
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label for="email">Email<span class="start_checkout">*</span></label>
-                            <input name="email" type="text" class="input-text" id="email" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>State <span class="start_checkout">*</span></label>
+                                    <div class="selectbox">
+                                        <select formControlName="state" required>
+                                            <option default>Select State</option>
+                                            <option *ngFor="let state of states">{{state}}</option>
+                                        </select>
+                                    </div>
+                                </div><!-- .input-field -->
 
-                        <div class="input-field">
-                            <label for="phone">Phone<span class="start_checkout">*</span></label>
-                            <input type="text" name="phone" class="input-text" id="phone" required="">
-                        </div><!-- .input-field -->
+                                <div class="input-field">
+                                    <label>Pincode / Zip <span class="start_checkout">*</span></label>
+                                    <input name="pincode" type="number" placeholder="Pincode"
+                                        class="input-text form-control" required formControlName="pincode">
+                                </div><!-- .input-field -->
 
-                        <div class="checkbox checkbox_acount deffirent_address">
-                            <input type="checkbox" value="yes" name="ship_address" id="ship_address">
-                            <label for="ship_address">Ship to a Different address?</label>
+                                <div class="input-field">
+                                    <label>Type <span class="start_checkout">*</span></label>
+                                    <div class="selectbox" >
+                                        <select formControlName="type">
+                                            <option default value="Home">Home</option>
+                                            <option value="Work">Work</option>
+                                        </select>
+                                    </div>
+                                </div><!-- .input-field -->
+
+                                <div class="p-5">
+                                    <input type="checkbox" formControlName="setDefault"> Set as default ?
+                                </div><!-- .input-field -->
+
+                                <button class="btn btn-primary" type="submit"
+                                    [disabled]="!addressForm.valid">Submit</button>
+                            </form>
                         </div>
-                        <div class="ship_diferent">
-                            <div class="input-field">
-                                <label>Country <span class="start_checkout">*</span></label>
-                                <div class="selectbox">
-                                    <select name="country">
-                                        <option value="vietnam">Vietnam</option>
-                                        <option value="US">US</option>
-                                    </select>
+                    </div>
+                    <div class="billing-fields billing-fields-1">
+                        <h2>Select Address</h2>
+                        <div class="card" *ngFor="let address of addresses">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{address.name}}<span *ngIf="address.is_default">  --  Default</span></h4>
+                                    <p class="card-text">{{address.line_1}}, {{address.line_2}}, {{address.city}},
+                                        {{address.state}} - {{address.pincode}}</p>
+                                    <p>Phone: {{address.phone}}</p>
+                                    <button class="card-link float-left border p-2"
+                                        (click)="deleteAddress(address.timesta)">Delete</button>
+                                    <button class="card-link float-right  border p-2" (click)="setCurrentAddress(address.timesta)">Use Address</button>
                                 </div>
-                            </div><!-- .input-field -->
-
-                            <div class="input-field">
-                                <label>First name <span class="start_checkout">*</span></label>
-                                <input name="first-name" type="text" placeholder="First name" class="input-text" required="">
-                            </div><!-- .input-field -->
-
-                            <div class="input-field">
-                                <label>Last name <span class="start_checkout">*</span></label>
-                                <input type="text" name="last-name" placeholder="Last name" class="input-text" required="">
-                            </div><!-- .input-field -->
-
-                            <div class="input-field">
-                                <label for="company-name">Company name</label>
-                                <input type="text" name="company" placeholder="Company name" class="input-text">
-                            </div><!-- .input-field -->
-
-                            <div class="input-field">
-                                <label>Town / City <span class="start_checkout">*</span></label>
-                                <input type="text" name="town" class="input-text" required="">
-                            </div>
-
-                            <div class="input-field">
-                                <label for="note1">Order note</label>
-                                <textarea rows="10" cols="40" name="note1" id="note1"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 topcorner">
                 <div class="check_out_right default_check_out">
                     <div class="billing-fields">
                         <h2>Your order</h2>
                         <div class="your_order">
                             <div class="input-field product_buy">
+                                <label><span class="country2">Delivery Address:</span></label>
+                                <h4 class="card-title">{{currentAddress.name}}</h4>
+                                    <p class="card-text">{{currentAddress.line_1}}, {{currentAddress.line_2}}, {{currentAddress.city}},
+                                        {{currentAddress.state}} - {{currentAddress.pincode}}</p>
+                                    <p>Phone: {{currentAddress.phone}}</p>
+
                                 <label><span class="country2">Products</span><span class="totals">TOTALS</span></label>
-                                <p><a href=""> <span class="navy">Slim Collarless Blaze</span></a><span class="price_navy">$75.20</span></p>
-                                <p><a href=""><span class="navy">Denim Kimono Jacket</span></a> <span class="price_navy">$75.20</span></p>
-                                <p class="cart_subtotal"><a href=""><span class="navy">Cart Subtotal</span></a> <span class="price_navy">$35.00</span></p>
+                                <p *ngFor="let product of products"><a href=""> <span
+                                            class="navy">{{product.product_name}}</span></a><span
+                                        class="price_navy">{{productsUtil.getPriceFromCart(product.product_id,cart,products)
+                                        | currency:'INR'}}</span>
+                                </p>
+                                <p class="shipping_free">
+                                    <span class="navy">Shipping</span>
+                                    <span class="price_navy" *ngIf="shipping == 0">Free Shipping</span>
+                                    <span class="price_navy" *ngIf="shipping != 0">{{shipping | currency:'INR'}}</span>
+                                </p>
+                                <p class="cart_subtotal" *ngIf="newUserDiscount != 0">
+                                    <span class="navy">New User Discount</span>
+                                    <span class="price_navy">-{{newUserDiscount | currency:'INR'}}</span>
+                                </p>
+                                <p class="cart_subtotal" *ngIf="couponDiscount != 0">
+                                    <span class="navy">Coupon Discount</span>
+                                    <span class="price_navy">-{{couponDiscount | currency:'INR'}}</span>
+                                </p>
                             </div>
                             <div class="input-field">
-                                <label class="title_order_totals"><span class="order_total">Order Totals :</span><span class="price_order_total">$105.00</span></label>
-                            </div>
-                            <div class="payment_methods">
-                                <ul>
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="radio" checked="checked" value="cheque" name="payment_method" id="direct">
-                                            <label for="direct">DIRECT BANK TRANSFER</label>
-                                        </div>
-                                        <div class="payment-box">
-                                            <p>Donec sed odio dui. Nulla vitae elit libero, a phara etra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="radio" value="cheque" name="payment_method" id="payment_method">
-                                            <label for="payment_method">CHEQUE PAYMENT</label>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="radio" value="cheque" name="payment_method" id="selivery_method">
-                                            <label for="selivery_method">CASH ON DELIVERY</label>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="radio" value="cheque" name="payment_method" id="paypal_method">
-                                            <label for="paypal_method">PAYPAL</label>
-                                        </div>
-                                    </li>
-
-                                </ul>
+                                <label class="title_order_totals"><span class="order_total">Order Totals :</span><span
+                                        class="price_order_total">{{total | currency:'INR'}}</span></label>
                             </div>
                         </div>
                         <div class="place_order">
-                            <a href="" class="link_place_order">Place ORder</a>
+                            <a href="" class="link_place_order">Place Order</a>
                         </div>
                     </div>
                 </div>
