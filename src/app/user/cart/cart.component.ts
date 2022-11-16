@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from 'src/app/core/service/cart.service';
@@ -15,6 +16,7 @@ import { ProductUtil } from 'src/app/util/ProductsUtil';
 })
 export class CartComponent implements OnInit {
 
+  couponForm!: FormGroup
   isLogIn: boolean = false
   cart: Cart[] = []
   products: Product[] = []
@@ -28,7 +30,10 @@ export class CartComponent implements OnInit {
   constructor(private modal: NgbModal,
     private cartService: CartService,
     private productService: ProductService,
-    private router: Router) { }
+    private fb: FormBuilder,
+    private router: Router) { 
+      this.createForm();
+    }
 
   ngOnInit() {
 
@@ -61,6 +66,16 @@ export class CartComponent implements OnInit {
         }).catch(err => console.log('error:' + err))
     })
 
+  }
+
+  createForm() {
+    this.couponForm = this.fb.group({
+      coupon: ['', Validators.required]
+    });
+  }
+
+  addCoupon(){
+    
   }
 
   removeFromCart(timesta:string, path:string){

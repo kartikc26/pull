@@ -8,6 +8,10 @@ export class ProductUtil {
     return products.filter(i => { return i.product_id == id })[0].product_name
   }
 
+  getDescription(id: string, products: Product[]) {
+    return products.filter(i => { return i.product_id == id })[0].description
+  }
+
   getSize(id: string, size: string, products: Product[]) {
     return products.filter(i => { return i.product_id == id })[0].size.split("~")[parseInt(<string>size)]
   }

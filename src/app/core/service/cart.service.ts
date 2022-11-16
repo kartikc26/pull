@@ -93,6 +93,7 @@ export class CartService {
   }
 
   deleteFromCart(timesta: string, path: string) {
+    //TODO also delete correcponding images folder
     let promise = new Promise((resolve, reject) => {
       this.http.post(environment.serviceUrl + 'deletecart.php', JSON.stringify({ 'timesta': timesta, 'path': path })).toPromise()
         .then(res => { resolve(res) })

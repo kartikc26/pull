@@ -25,6 +25,7 @@ import { PipesModule} from "./core/pipes/pipes.module";
 import { CustomizeComponent } from './customize/customize.component';
 import { CheckoutComponent } from './user/cart/checkout/checkout.component';
 import { CartTotalComponent } from './user/cart/cart-total/cart-total.component';
+import { OrderDetailsComponent } from './user/order-details/order-details.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { CartTotalComponent } from './user/cart/cart-total/cart-total.component'
     CustomizeComponent,
     CheckoutComponent,
     CartTotalComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,9 +4,7 @@ export interface User{
     phone:string
     gender:string
     acc_creation_date:string
-    acc_status:string
-    addresses:string
-    orders:string
+    acc_status:String
     wishlist:string
     coupons:string
     wallet:number

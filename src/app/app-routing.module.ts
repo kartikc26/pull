@@ -12,6 +12,7 @@ import { WishlistComponent } from './user/wishlist/wishlist.component';
 import {ErrorComponent} from "./error/error.component";
 import {CustomizeComponent} from "./customize/customize.component";
 import { CheckoutComponent } from './user/cart/checkout/checkout.component';
+import { OrderDetailsComponent } from './user/order-details/order-details.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent, pathMatch:"full"},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: "wishlist", component:WishlistComponent, canActivate:[AuthGuard]},
   {path: "cart", component:CartComponent},
   {path: "checkout", component:CheckoutComponent},
+  {path: "order-details", component:OrderDetailsComponent},
   {path: "contact", component:ContactComponent},
   {path: "product", component:ProductDetailComponent},
   {path: "product/:category/:id", component:ProductDetailComponent},

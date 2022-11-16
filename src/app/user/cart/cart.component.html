@@ -64,10 +64,12 @@
                 <div class="calculate_shipping shopping_default">
                     <div class="shopping_default coupon_codes">
                         <h2 class="title title_default">coupon codes</h2>
-                        <div class="content_coupon_codes">
-                            <input type="text" class="form-control" placeholder="Enter your code here !">
-                            <button type="submit" class="btn btn-default">Apply coupon</button>
-                        </div>
+                        <form [formGroup]="couponForm" (ngSubmit)="addCoupon()">
+                            <div class="content_coupon_codes">
+                                <input type="text" class="form-control" placeholder="Enter your code here !" formControlName="coupon">
+                                <button type="submit" class="btn btn-default">Apply coupon</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

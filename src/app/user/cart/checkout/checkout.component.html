@@ -99,21 +99,21 @@ i am checkout
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 topcorner">
+            <div class="col-md-6">
                 <div class="check_out_right default_check_out">
                     <div class="billing-fields">
                         <h2>Your order</h2>
                         <div class="your_order">
                             <div class="input-field product_buy">
                                 <label><span class="country2">Delivery Address:</span></label>
-                                <h4 class="card-title">{{currentAddress.name}}</h4>
-                                    <p class="card-text">{{currentAddress.line_1}}, {{currentAddress.line_2}}, {{currentAddress.city}},
-                                        {{currentAddress.state}} - {{currentAddress.pincode}}</p>
-                                    <p>Phone: {{currentAddress.phone}}</p>
+                                <h4 class="card-title">{{currentAddress?.name}}</h4>
+                                    <p class="card-text">{{currentAddress?.line_1}}, {{currentAddress?.line_2}}, {{currentAddress?.city}},
+                                        {{currentAddress?.state}} - {{currentAddress?.pincode}}</p>
+                                    <p>Phone: {{currentAddress?.phone}}</p>
 
                                 <label><span class="country2">Products</span><span class="totals">TOTALS</span></label>
                                 <p *ngFor="let product of products"><a href=""> <span
-                                            class="navy">{{product.product_name}}</span></a><span
+                                            class="navy">{{product?.product_name}}</span></a><span
                                         class="price_navy">{{productsUtil.getPriceFromCart(product.product_id,cart,products)
                                         | currency:'INR'}}</span>
                                 </p>
@@ -137,7 +137,7 @@ i am checkout
                             </div>
                         </div>
                         <div class="place_order">
-                            <a href="" class="link_place_order">Place Order</a>
+                            <button class="link_place_order" (click)="placeOrder()">Place Order</button>
                         </div>
                     </div>
                 </div>
