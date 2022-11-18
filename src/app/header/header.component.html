@@ -10,49 +10,11 @@
       <nav class="collapse navbar-collapse" [ngClass]="navShow ? 'nav_showing' : ''">
         <ul class="menu">
           <li class="level-01 home"><a class="active" routerLink="">HOME</a></li>
-          <li class="level-01 shop"><a (click)="openGiftFor()">GIFT FOR <i class="fa fa-plus"
+          <li class="level-01 shop"><a (click)="openPanel('giftfor')">GIFT FOR <i class="fa fa-plus"
                 *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
             <div class="mega_drop_menu mega_dropdown_portfolio_v1" [ngClass]="clickedGiftFor ? 'open' : ''">
-              <!-- <div class="row">
-                  <div class="col-lg-4">
-                      <div class="menu-menu">
-                          <h3 class="title">CATEGORIES</h3>
-                          <ul class="block_level2">
-                              <li class="level-02"><a href="#">Plazers</a></li>
-                              <li class="level-02"><a href="#">Jacket</a></li>
-                              <li class="level-02"><a href="#">Coats</a></li>
-                              <li class="level-02"><a href="#">Parka</a></li>
-                              <li class="level-02"><a href="#">Sweater</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-lg-4">
-                      <div class="menu-menu">
-                          <h3 class="title">BRANDS</h3>
-                          <ul class="block_level2">
-                              <li class="level-02"><a href="#">2XH Brothers</a></li>
-                              <li class="level-02"><a href="#">Edwin</a></li>
-                              <li class="level-02"><a href="#">Obey</a></li>
-                              <li class="level-02"><a href="#">Majestic</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-lg-4">
-                      <div class="menu-menu">
-                          <h3 class="title">PAGES</h3>
-                          <ul class="block_level2">
-                              <li class="level-02"><a href="blog_grid.html">Shop Grid</a></li>
-                              <li class="level-02"><a href="blog_listing_left_sidebar.html">Shop Grid Left Sidebar</a></li>
-                              <li class="level-02"><a href="blog_single_with_audio.html">Product Single With Audio</a></li>
-                              <li class="level-02"><a href="blog_single_with_image.html">Product Single With Image</a></li>
-                              <li class="level-02"><a href="blog_single_with_slider.html">Product Single With Slider</a></li>
-                              <li class="level-02"><a href="blog_single_with_video.html">Product Single With Video</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div> -->
               <div class="menu-menu">
-                <ul class="block_level2">
+                <ul class="block_level2" (click)="toggleClass()">
                   <li class="level-02"><a routerLink="boy">BOY</a></li>
                   <li class="level-02"><a routerLink="girls">GIRL</a></li>
                   <li class="level-02"><a routerLink="sister">SISTER</a></li>
@@ -64,11 +26,11 @@
               </div>
             </div>
           </li>
-          <li class="level-01 portfolio"><a (click)="openOccassion()">OCCASSION <i class="fa fa-plus"
-            *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
-            <div class="mega_drop_menu mega_dropdown_portfolio_v1" [ngClass]="clickedOccassion ? 'open' : ''">
-              <div class="menu-menu">
-                <ul class="block_level2">
+          <li class="level-01 shop"><a (click)="openPanel('occassion')">OCCASSION <i class="fa fa-plus"
+            *ngIf="!clickedOccassion"></i><i class="fa fa-minus" *ngIf="clickedOccassion"></i></a>
+        <div class="mega_drop_menu mega_dropdown_portfolio_v1" [ngClass]="clickedOccassion ? 'open' : ''">
+          <div class="menu-menu">
+                <ul class="block_level2" (click)="toggleClass()">
                   <li class="level-02"><a routerLink="birthday">BIRTHDAY</a></li>
                   <li class="level-02"><a routerLink="anniversary">ANNIVERSARY</a></li>
                   <li class="level-02"><a routerLink="wedding">WEDDING</a></li>
@@ -77,11 +39,11 @@
               </div>
             </div>
           </li>
-          <li class="level-01 blog"><a (click)="openCategory()">CATEGORIES <i class="fa fa-plus"
-            *ngIf="!clickedGiftFor"></i><i class="fa fa-minus" *ngIf="clickedGiftFor"></i></a>
+          <li class="level-01 blog"><a (click)="openPanel('category')">CATEGORIES <i class="fa fa-plus"
+            *ngIf="!clickedCategory"></i><i class="fa fa-minus" *ngIf="clickedCategory"></i></a>
             <div class="mega_drop_menu mega_dropdown_blog_v1" [ngClass]="clickedCategory ? 'open' : ''">
               <div class="menu-menu">
-                <ul class="block_level2">
+                <ul class="block_level2" (click)="toggleClass()">
                   <li class="level-02"><a routerLink="blog_grid.html">Blog Default</a></li>
                   <li class="level-02"><a routerLink="blog_grid.html">Blog Grid</a></li>
                   <li class="level-02"><a routerLink="blog_masonry.html">Blog Masonry</a></li>
@@ -125,7 +87,7 @@
         <div class="navcart">
           <div class="navcart-wrap">
             <div class="navbar-minicart">
-              <a class="minicart-link" href="#">
+              <a class="minicart-link" routerLink="cart">
                 <span class="minicart-icon"><i class="fa fa-shopping-cart"></i><span>{{cart.length}}</span></span>
               </a>
               <div class="mega_drop_menu mega_dropdown_nav_cart_v1">

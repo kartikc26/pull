@@ -12,4 +12,5 @@ export interface OrderDetail {
     coupon_id:string
     invoice_id:string
     invoice:string
+    status:string
 }

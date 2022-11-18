@@ -170,13 +170,13 @@ export class CheckoutComponent implements OnInit {
       payment_status: 'SUCCESS',
       coupon_id: 'NA',
       invoice_id: invoice_id,
-      invoice: this.uploadPath + invoice_id + ".pdf"
+      invoice: this.uploadPath + invoice_id + ".pdf",
+      status: 'Success'
     }
     console.log(orderDetail)
     this.orderService.setOrderDetail(orderDetail).then(() => { console.log('order detail added Successfully'); }).catch(() => console.log('order detail error, please retry!'))
 
     //set order items
-
     let orderItems: OrderItems[] = []
     this.cart.forEach(cartItem => {
       let orderItem: OrderItems = {
@@ -190,17 +190,14 @@ export class CheckoutComponent implements OnInit {
         text: cartItem.texts,
         amount: String(this.productsUtil.getDiscPrice(cartItem.product_id,cartItem.product_size,this.products))
       }
-
       orderItems.push(orderItem)
-
     })
     console.log(orderItems)
     this.orderService.setOrderItems(orderItems).then(() => { console.log('order items added Successfully'); }).catch(() => console.log('order items error, please retry!'))
 
-
     this.getInvoicePdf(date, invoice_id, orderItems);
 
-    this.router.navigate(['order-details'], { queryParams: { 'success': 'true' } })
+    this.router.navigate(['order-details'], { queryParams: { 'success': 'true' , 'id': order_id} })
   }
 
   getInvoicePdf(date: Date, invoice_id: string, orderItems: OrderItems[]) {
@@ -246,12 +243,12 @@ export class CheckoutComponent implements OnInit {
           website: "www.giftnwish.in",
         },
         contact: {
-          label: "Invoice issued for:",
-          name: userData.name,
-          address: this.currentAddressString,
-          phone: this.currentAddress.phone,
-          email: this.currentAddress.email,
-          otherInfo: "Extra Info",
+          label: "",
+          name: this.currentAddress.name,
+          address: this.currentAddress.line_1 +", "+this.currentAddress.line_2 + ", ",
+          phone: this.currentAddress.city+", "+this.currentAddress.state+", "+this.currentAddress.pincode, //address line 
+          email: this.currentAddress.phone, //phone 
+          otherInfo: "", //this.currentAddress.email, //email
         },
         invoice: {
           label: "Invoice #: ",
@@ -341,18 +338,7 @@ export class CheckoutComponent implements OnInit {
       var file = new File([u8arr], invoice_id + ".pdf", { type: 'pdf' })
       this.dataService.upload(file, 0, this.uploadPath).then(() => { console.log('Uploaded Successfully'); }).catch(() => console.log('Upload error, please retry!'))
 
-
-
       console.log(file)
-
-
-
-
     }).catch((err) => { console.log('Unable to get user data'+err) })
-
-
-
   }
-
-
 }

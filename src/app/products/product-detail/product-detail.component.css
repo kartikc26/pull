@@ -82,13 +82,12 @@ div {
   font-size: 20px;
 }
 
-.nav-tabs .nav-item.show .nav-link,
+/* .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   color: #4466ff;
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid #4466ff;
-}
+} */
 
 .star-padding {
   padding-right: 5px;
@@ -156,16 +155,6 @@ div {
   display: block;
 }
 
-.memory-button {
-  border: 1px solid #bdafaf;
-  background-color: white;
-  padding: 9px 18px 9px 18px;
-}
-
-.memory-button button:active,
-button:focus {
-  border: 2px solid #4466ff;
-}
 
 #btn-circle {
   width: 28px;
@@ -209,6 +198,7 @@ th {
 tr:nth-child(even) {
   background-color: #f0f0f0;
 }
+
 
 
 /*

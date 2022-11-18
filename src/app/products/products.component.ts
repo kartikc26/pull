@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../core/service/data.service";
 import { ProductService } from '../core/service/product.service';
 import {Product} from "../model/product";
+import { ProductUtil } from '../util/ProductsUtil';
 
 @Component({
   selector: 'app-products',
@@ -11,8 +12,9 @@ import {Product} from "../model/product";
 })
 export class ProductsComponent implements OnInit {
 
-  prod:Product[] |undefined
+  prod:Product[] =[]
   prodType:any |undefined
+  productsUtil:ProductUtil = new ProductUtil();
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private router: Router) { }
@@ -31,7 +33,7 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  imgClick(prod_id:String){
+  navigateToCustomize(prod_id:String){
     this.router.navigate(['product'],{queryParams: {category:this.prodType , id:prod_id}})
   }
 

@@ -5,6 +5,9 @@ import {Product} from "../../model/product";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CustomizeComponent} from "../../customize/customize.component";
 import { ProductService } from 'src/app/core/service/product.service';
+import { ProductUtil } from 'src/app/util/ProductsUtil';
+import { RatingService } from 'src/app/core/service/rating.service';
+import { Rating } from 'src/app/model/rating';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,17 +16,22 @@ import { ProductService } from 'src/app/core/service/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  prod:Product[] |undefined
+  prod:Product[] =[]
+  ratings:Rating[]=[]
   prodId:string =""
   category:string =""
-  price:string ="Select Size"
+  price:string =""
   size:number = 0
   weight:string =""
   mainImage:string=""
+  selectedImageIndex=0;
+
+  productsUtil:ProductUtil = new ProductUtil();
 
   constructor(private route:ActivatedRoute,
               private dataService: DataService,
               private productService: ProductService,
+              private ratingService: RatingService,
               private modal: NgbModal,
               private router: Router) {  }
 
@@ -43,7 +51,10 @@ export class ProductDetailComponent implements OnInit {
       this.prod=products
       this.productService.prodImageCount=products[0].noi
       this.productService.prodTextCount=products[0].not
+      this.price = this.prod[0].price.split('~')[0]
     })
+
+    this.ratingService.getRating(this.prodId).then((res)=>{this.ratings=res; console.log(this.ratings)}).catch(err=>{console.log('error getting rating:'+err)})
   }
 
   sizeSelect(i:number){
@@ -54,9 +65,10 @@ export class ProductDetailComponent implements OnInit {
     this.weight=this.prod[0].weight.split('~')[i]
   }
 
-  imageSelect(i:string){
-    console.log("click:"+i)
-    this.mainImage="assets/images/products/"+this.prodId+"/"+i+".jpg"
+  imageSelect(img:string,i:number){
+    console.log("click:"+img)
+    this.selectedImageIndex=i
+    this.mainImage="assets/images/products/"+this.prodId+"/"+img+".jpg"
   }
 
   customize(){

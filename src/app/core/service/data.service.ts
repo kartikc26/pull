@@ -83,13 +83,6 @@ export class DataService {
   }
 
   
-
-  getRating(product_id: string): Observable<Rating> {
-    return this.http.get<Rating>(environment.serviceUrl + 'getrating.php?product_id=' + product_id)
-  }
-
-  
-
   upload(file: File, idx: number, path: string) {
 
     const formData: FormData = new FormData();

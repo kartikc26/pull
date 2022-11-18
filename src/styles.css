@@ -8330,7 +8330,7 @@ sup {
   .introduce_product .tittle_product {
     margin-bottom: 12px; }
     .introduce_product .tittle_product a {
-      font: 400 16px "Montserrat";
+      font: 400 30px "Montserrat";
       color: #000000;
       text-decoration: none; }
       .introduce_product .tittle_product a:hover {
@@ -12753,9 +12753,19 @@ body {
 
 .origin-amt{
   text-decoration: line-through;
+  font-size: 15px !important;
+
 }
 
 .container{
   font-size: 150%;
   font-family: Montserrat;
+}
+
+.hoverClick{
+  cursor: pointer !important;
+}
+
+.active{
+  text-decoration: none !important;
 }

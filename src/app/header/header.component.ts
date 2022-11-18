@@ -43,24 +43,10 @@ export class HeaderComponent implements OnInit {
         console.log(this.userData)
       }).catch(err=>console.log(err))
     }
-
-    // this.dataService.fetchCart()
-    // .then((res:any)=>{
-    //   console.log(res)
-    //   this.cart = res.cart.toString().split(['~']).slice(0,-1)
-    //   console.log(this.cart)
-
-    //   this.cart.forEach(item =>{
-    //     this.dataService.getProductData(item).toPromise()
-    //     .then((res:Product[])=>{
-    //       this.products.push(res[0])
-    //       console.log(this.products)
-    //       return
-    //     })
-    //   })
-
-    // }).catch(err=>{console.log(err)})
-
+    this.fetchCart();
+    
+  }
+  fetchCart(){
     this.cartService.fetchCart().subscribe((res:any) =>{
       console.log(res)
       if(res!='No Data'){
@@ -75,12 +61,7 @@ export class HeaderComponent implements OnInit {
           return
         })
       })
-
     })
-
-    
-
-
   }
 
   login() {
@@ -98,7 +79,8 @@ export class HeaderComponent implements OnInit {
 
   removeFromCart(timesta:string, path:string){
     console.log('delete: '+timesta)
-    this.cartService.deleteFromCart(timesta,path).then(res=>console.log('deleted: '+timesta)).catch(err=>console.log('error deleting'))
+    this.cartService.deleteFromCart(timesta,path).then(res=>{console.log('deleted: '+timesta); this.fetchCart()}).catch(err=>console.log('error deleting'))
+    
   }
 
   toggleClass(){
@@ -107,15 +89,47 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  turnAllOff(){
+    this.clickedGiftFor = false
+    this.clickedOccassion = false
+    this.clickedCategory = false
+  }
+
   openGiftFor(){
+    this.turnAllOff()
     this.clickedGiftFor = !this.clickedGiftFor
   }
 
   openOccassion(){
+    this.turnAllOff()
     this.clickedOccassion = !this.clickedOccassion
   }
 
   openCategory(){
+    this.turnAllOff()
     this.clickedCategory = !this.clickedCategory
   }
+
+  openPanel(data:string){
+    console.log(data)
+
+    if(data=='giftfor') {
+      this.clickedGiftFor = !this.clickedGiftFor
+      this.clickedOccassion = false
+      this.clickedCategory = false
+    }
+
+    if(data=='occassion') {
+      this.clickedOccassion = !this.clickedOccassion
+      this.clickedGiftFor = false
+      this.clickedCategory = false
+    }
+
+    if(data=='category') {
+      this.clickedCategory = !this.clickedCategory
+      this.clickedGiftFor = false
+      this.clickedOccassion = false
+    }
+  }
+
 }
