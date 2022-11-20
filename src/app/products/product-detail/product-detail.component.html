@@ -37,7 +37,8 @@
         <div class="mt-5">
           <p><b>Sizes</b></p>
           <span *ngFor="let sizes of product.size.split('~'); let i=index;">
-            <button class="mr-3 btn btn-light btn-lg" (click)="sizeSelect(i)" [ngClass]="size==i ? 'active' : ''">{{sizes}}</button>
+            <button class="mr-3 btn btn-light btn-lg" (click)="sizeSelect(i)"
+              [ngClass]="size==i ? 'active' : ''">{{sizes}}</button>
           </span>
           <hr>
         </div>
@@ -45,8 +46,8 @@
           <p>
             <span class="price_new">{{price | discPrice:prod[0].discount | currency:'INR'}}</span>&nbsp;
             <span class="origin-amt">{{price | currency:'INR'}}</span>&nbsp;
-            </p>
-            <p class="discount">{{product.discount}}% off</p>
+          </p>
+          <p class="discount">{{product.discount}}% off</p>
         </div>
         <div class="available">
           <span class="title">Available: </span>
@@ -54,8 +55,8 @@
         </div>
         <p class="note_pro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum eros idoni rutrum
           fermentum. </p>
-          <div class="buy_on_ebay">
-            <a class="text-white hoverClick" (click)="customize()">Customize and Buy</a>
+        <div class="buy_on_ebay">
+          <a class="text-white hoverClick" (click)="customize()">Customize and Buy</a>
         </div>
         <div class="categories">
           <p class="title">Categories: </p>
@@ -90,7 +91,7 @@
       <div class="header_pro_description">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" href="#tab-v8-1" role="tab" data-toggle="tab" aria-expanded="true">Product
+            <a class="nav-link " href="#tab-v8-1" role="tab" data-toggle="tab" aria-expanded="true">Product
               description</a>
           </li>
           <li class="nav-item">
@@ -98,14 +99,15 @@
               information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#tab-v8-3" role="tab" data-toggle="tab" aria-expanded="true">Ratings ({{ratings.length}})</a>
+            <a class="nav-link active" href="#tab-v8-3" role="tab" data-toggle="tab" aria-expanded="true">Ratings
+              ({{ratings.length}})</a>
           </li>
         </ul>
       </div>
       <div class="tab-content">
-        <div class="tab-pane active " id="tab-v8-1">
+        <div class="tab-pane fade " id="tab-v8-1">
           <div class="content_pro_description">
-            <div class="coupling"><span>Coupling a blended linen construction with tailored style, the River Island HR
+            <div ><span>Coupling a blended linen construction with tailored style, the River Island HR
                 Jasper Blazer will imprint a touch of dapper charm into your after-dark wardrobe. Our model is wearing a
                 size medium blazer, and usually takes a size medium/38L shirt. He is 6’2 1/2” (189cm) tall with a 38”
                 (96 cm) chest and a 31” (78 cm) waist.</span>
@@ -114,24 +116,35 @@
         </div>
         <div class="tab-pane fade" id="tab-v8-2">
           <div class="content_pro_description">
-            <div class="coupling"><span>Coupling a blended linen construction with tailored style, the River Island HR
+            <div><span>Coupling a blended linen construction with tailored style, the River Island HR
                 Jasper Blazer will imprint a touch of dapper charm into your after-dark wardrobe. Our model is wearing a
                 size medium blazer, and usually takes a size medium/38L shirt. He is 6’2 1/2” (189cm) tall with a 38”
                 (96 cm) chest and a 31” (78 cm) waist.</span>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="tab-v8-3">
+        <div class="tab-pane active" id="tab-v8-3">
           <div class="content_pro_description">
-            <div class="coupling" *ngFor="let rating of ratings">
+            <div *ngFor="let rating of ratings">
               <div class="card border-light mb-5">
-                <div class="card-header">{{rating.user_name}} <span></span></div>
+                <div class="card-header">
+                    <ul class="list-inline rating-list p-0" style="display: inline-block">
+                      <li class="text-dark mr-4 p-0">
+                        {{rating.user_name}}
+                      </li>
+                    </ul>
+                    <ul class="list-inline rating-list p-0" *ngFor="let star of stars" style="display: inline-block">
+                      <li class="p-0 pr-2" [ngClass]="{'selected': (star <= rating.rating)}">
+                        <i class="fa fa-star"></i>
+                      </li>
+                    </ul>
+                </div>
                 <div class="card-body">
-                  <h5 class="card-title">Light card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title">{{rating.title}}</h5>
+                  <p class="card-text">{{rating.description}}</p>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>

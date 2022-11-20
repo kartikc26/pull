@@ -8451,24 +8451,7 @@ sup {
           width: 100%;
           position: absolute;
           bottom: -5px; }
-  .product_description .content_pro_description {
-    margin-top: 40px; }
-    .product_description .content_pro_description .coupling {
-      font: 400 13.01px/24px "Droid Serif";
-      color: #666666; }
-    .product_description .content_pro_description ul {
-      list-style: none; }
-      .product_description .content_pro_description ul li {
-        font: 400 13.01px/23px "Droid Serif";
-        color: #666666;
-        position: relative;
-        padding-left: 18px; }
-        .product_description .content_pro_description ul li:before {
-          content: "\5e";
-          position: absolute;
-          font-family: "ElegantIcons";
-          left: 0px;
-          bottom: 0px; }
+
 
 .tittle_related_products {
   text-align: center; }
@@ -12757,7 +12740,7 @@ body {
 
 }
 
-.container{
+.container .container-fluid{
   font-size: 150%;
   font-family: Montserrat;
 }
